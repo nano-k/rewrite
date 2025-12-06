@@ -32,7 +32,7 @@ if (pageNum) {
 /* ==========================================
    ページロック解除
 ========================================== */
-function unlockPage(pageNumber, delay = 0) {
+function unlockPage(pageNumber) {
   const page = document.querySelector(`.page[data-page="${pageNumber}"]`);
   if (page) {
     page.dataset.lock = "false";
@@ -41,7 +41,7 @@ function unlockPage(pageNumber, delay = 0) {
   }
 }
 
-function showPage(pageNumber) {
+function showPage(pageNumber, delay = 0) {
   const target = document.querySelector(`.page[data-page="${pageNumber}"]`);
   if (target) {
     target.scrollIntoView({ behavior: "smooth", block: "start" });
