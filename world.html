@@ -13,7 +13,6 @@
 <div class="container">
 <main>
 
-  <!-- 小謎1（page2） -->
   <section class="page" data-page="2" id="q1">
     <h2 class="section-title">小謎 1</h2>
     <p>
@@ -22,92 +21,74 @@
       「ぬ」を「た」に変えて、できた言葉から「た」を抜け。<br>
       解答を入力せよ。
     </p>
-
     <input id="answer1" placeholder="解答">
     <button onclick="checkQ1()">送信</button>
     <p id="q1result" class="result"></p>
   </section>
 
-  <!-- 小謎2（page3） -->
   <section class="page" data-page="3" data-lock="true">
     <h2 class="section-title">小謎 2</h2>
-    <p>この小謎の答えは「こ」です。</p>
-
+    <p>答えは「こ」。</p>
     <input id="q2" placeholder="解答">
     <button onclick="checkSmall('q2', 4)">送信</button>
     <p id="q2result" class="result"></p>
   </section>
 
-  <!-- 小謎3（page4） -->
   <section class="page" data-page="4" data-lock="true">
     <h2 class="section-title">小謎 3</h2>
-    <p>答えは「た」です。</p>
-
+    <p>答えは「た」。</p>
     <input id="q3" placeholder="解答">
     <button onclick="checkSmall('q3', 5)">送信</button>
     <p id="q3result" class="result"></p>
   </section>
 
-  <!-- 小謎4（page5） -->
   <section class="page" data-page="5" data-lock="true">
     <h2 class="section-title">小謎 4</h2>
-    <p>答えは「え」です。</p>
-
+    <p>答えは「え」。</p>
     <input id="q4" placeholder="解答">
     <button onclick="checkSmall('q4', 6)">送信</button>
     <p id="q4result" class="result"></p>
   </section>
 
-  <!-- 小謎5（page6） -->
   <section class="page" data-page="6" data-lock="true">
     <h2 class="section-title">小謎 5</h2>
-    <p>答えは「は」です。</p>
-
+    <p>答えは「は」。</p>
     <input id="q5" placeholder="解答">
     <button onclick="checkSmall('q5', 7)">送信</button>
     <p id="q5result" class="result"></p>
   </section>
 
-  <!-- 小謎6（page7） -->
   <section class="page" data-page="7" data-lock="true">
     <h2 class="section-title">小謎 6</h2>
-    <p>答えは「あ」です。</p>
-
+    <p>答えは「あ」。</p>
     <input id="q6" placeholder="解答">
     <button onclick="checkSmall('q6', 8)">送信</button>
     <p id="q6result" class="result"></p>
   </section>
 
-  <!-- 小謎7（page8） -->
   <section class="page" data-page="8" data-lock="true">
     <h2 class="section-title">小謎 7</h2>
-    <p>答えは「ん」です。</p>
-
+    <p>答えは「ん」。</p>
     <input id="q7" placeholder="解答">
     <button onclick="checkSmall('q7', 9)">送信</button>
     <p id="q7result" class="result"></p>
   </section>
 
-  <!-- 小謎8（page9） -->
   <section class="page" data-page="9" data-lock="true">
     <h2 class="section-title">小謎 8</h2>
-    <p>答えは「さー」です。</p>
-
+    <p>答えは「さー」。</p>
     <input id="q8" placeholder="解答">
     <button onclick="checkSmall('q8', 10)">送信</button>
     <p id="q8result" class="result"></p>
   </section>
 
-  <!-- 大謎1（page10） -->
   <section class="page" data-page="10" data-lock="true" id="big1">
     <h2 class="section-title">大謎 1</h2>
     <p>
       あなたは【　】<br>
       この世界は【　】の【　】
     </p>
-
     <p>選択肢：はこ / うえ / つ / かん / した / て / しょ / うせつ / させつ / なか / しゃ / そと</p>
-
     <input id="big1a" placeholder="あなたは？">
     <input id="big1b" placeholder="この世界は？">
     <input id="big1c" placeholder="どこ？">
@@ -115,7 +96,6 @@
     <p id="big1result" class="result"></p>
   </section>
 
-  <!-- 大謎2（page11） -->
   <section class="page" data-page="11" data-lock="true" id="big2">
     <h2 class="section-title">大謎 2</h2>
     <p>
@@ -125,7 +105,6 @@
     <p id="big2result" class="result"></p>
   </section>
 
-  <!-- 大謎3（page12） -->
   <section class="page" data-page="12" data-lock="true" id="big3">
     <h2 class="section-title">大謎 3</h2>
     <p>
@@ -133,11 +112,9 @@
       帰還するにはまだすべきことがあるようだ。<br>
       何をすれば修正が完了するだろう。
     </p>
-
     <input id="big3a" placeholder="校閲指示">
     <button onclick="checkBig3()">送信</button>
     <p id="big3result" class="result"></p>
-
     <div id="toClear" class="hidden">
       <a class="next-btn" href="clear.html">あとがきへ</a>
     </div>
@@ -148,7 +125,6 @@
 <footer>
   Page <span id="pageNum">2</span>
 </footer>
-
 </div>
 
 <script src="js/script.js"></script>
