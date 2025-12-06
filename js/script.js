@@ -1,10 +1,3 @@
-/* ---- 状態管理 ---- */
-let unlockedIndex = 1; // index in unlockOrder: 0=intro unlocked by default, 1 = q1 unlocked etc.
-const solved = {}; // id => true
-
-const TOTAL_PUZZLES = 1 + 7 + 3; // q1 + (q2-8) + big1-3 = 11
-let solvedCount = 0;
-
 /* --- ノンブル変更 --- */
 const pageNum = document.getElementById("pageNum");
 const pages = document.querySelectorAll(".page");
