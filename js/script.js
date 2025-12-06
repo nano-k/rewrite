@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tweetBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
-    const text = "You rewrote the distorted 「検閲世界」. #検閲世界 #Web謎 @kotohano_nano";
+    const text = "You rewrote the distorted 『検閲世界』！（あなたは『検閲世界』の歪みを修正した！） #検閲世界 #Web謎 @kotohano_nano";
     const url  = "https://nano-k.github.io/rewrite/";
 
     const tweetURL =
