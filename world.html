@@ -13,8 +13,8 @@
 <div class="container">
 <main>
 
-  <!-- 小謎1 -->
-  <section class="page" data-page="2" id="q1">
+  <!-- 小謎1（最初だけロック解除） -->
+  <section class="page" data-page="2" data-lock="false" id="q1">
     <h2 class="section-title">小謎 1</h2>
     <p>
       「かぬぬぬき」<br>
@@ -29,17 +29,78 @@
     <p id="q1result" class="result"></p>
   </section>
 
-  <!-- 小謎2〜8（仮） -->
-  <section class="page" data-page="3"><h2 class="section-title">小謎 2</h2><p>ここに文章が入ります。</p></section>
-  <section class="page" data-page="4"><h2 class="section-title">小謎 3</h2><p>ここに文章が入ります。</p></section>
-  <section class="page" data-page="5"><h2 class="section-title">小謎 4</h2><p>ここに文章が入ります。</p></section>
-  <section class="page" data-page="6"><h2 class="section-title">小謎 5</h2><p>ここに文章が入ります。</p></section>
-  <section class="page" data-page="7"><h2 class="section-title">小謎 6</h2><p>ここに文章が入ります。</p></section>
-  <section class="page" data-page="8"><h2 class="section-title">小謎 7</h2><p>ここに文章が入ります。</p></section>
-  <section class="page" data-page="9"><h2 class="section-title">小謎 8</h2><p>ここに文章が入ります。</p></section>
+  <!-- 小謎2 -->
+  <section class="page" data-page="3" data-lock="true">
+    <h2 class="section-title">小謎 2</h2>
+    <p>ここに文章が入ります。</p>
+
+    <input id="q2" placeholder="解答">
+    <button onclick="checkSmall('q2', 4)">送信</button>
+    <p id="q2result" class="result"></p>
+  </section>
+
+  <!-- 小謎3 -->
+  <section class="page" data-page="4" data-lock="true">
+    <h2 class="section-title">小謎 3</h2>
+    <p>ここに文章が入ります。</p>
+
+    <input id="q3" placeholder="解答">
+    <button onclick="checkSmall('q3', 5)">送信</button>
+    <p id="q3result" class="result"></p>
+  </section>
+
+  <!-- 小謎4 -->
+  <section class="page" data-page="5" data-lock="true">
+    <h2 class="section-title">小謎 4</h2>
+    <p>ここに文章が入ります。</p>
+
+    <input id="q4" placeholder="解答">
+    <button onclick="checkSmall('q4', 6)">送信</button>
+    <p id="q4result" class="result"></p>
+  </section>
+
+  <!-- 小謎5 -->
+  <section class="page" data-page="6" data-lock="true">
+    <h2 class="section-title">小謎 5</h2>
+    <p>ここに文章が入ります。</p>
+
+    <input id="q5" placeholder="解答">
+    <button onclick="checkSmall('q5', 7)">送信</button>
+    <p id="q5result" class="result"></p>
+  </section>
+
+  <!-- 小謎6 -->
+  <section class="page" data-page="7" data-lock="true">
+    <h2 class="section-title">小謎 6</h2>
+    <p>ここに文章が入ります。</p>
+
+    <input id="q6" placeholder="解答">
+    <button onclick="checkSmall('q6', 8)">送信</button>
+    <p id="q6result" class="result"></p>
+  </section>
+
+  <!-- 小謎7 -->
+  <section class="page" data-page="8" data-lock="true">
+    <h2 class="section-title">小謎 7</h2>
+    <p>ここに文章が入ります。</p>
+
+    <input id="q7" placeholder="解答">
+    <button onclick="checkSmall('q7', 9)">送信</button>
+    <p id="q7result" class="result"></p>
+  </section>
+
+  <!-- 小謎8 -->
+  <section class="page" data-page="9" data-lock="true">
+    <h2 class="section-title">小謎 8</h2>
+    <p>ここに文章が入ります。</p>
+
+    <input id="q8" placeholder="解答">
+    <button onclick="checkSmall('q8', 10)">送信</button>
+    <p id="q8result" class="result"></p>
+  </section>
 
   <!-- 大謎1 -->
-  <section class="page" data-page="10" id="big1">
+  <section class="page" data-page="10" data-lock="true" id="big1">
     <h2 class="section-title">大謎 1</h2>
     <p>
       あなたは【　】<br>
@@ -56,23 +117,24 @@
     <p id="big1result" class="result"></p>
   </section>
 
-  <!-- 大謎2：ヘッダー修正 -->
-  <section class="page" data-page="11" id="big2">
+  <!-- 大謎2 -->
+  <section class="page" data-page="11" data-lock="true" id="big2">
     <h2 class="section-title">大謎 2</h2>
     <p>
       あなたはこの世界の正体を突き止め、自分が何者か解き明かした。<br>
-      帰還のためにすべきことを考えよう。<br>
-        </p>
+      帰還のためにすべきことを考えよう。
+    </p>
+
     <p id="big2result" class="result"></p>
   </section>
 
-  <!-- 大謎3：横→縦 -->
-  <section class="page" data-page="12" id="big3">
+  <!-- 大謎3 -->
+  <section class="page" data-page="12" data-lock="true" id="big3">
     <h2 class="section-title">大謎 3</h2>
     <p>
       あなたはこの世界の正体を突き止め、自分が何者か解き明かした。<br>
       帰還するにはまだすべきことがあるようだ。<br>
-     何をすれば修正が完了するだろう。<br>
+      何をすれば修正が完了するだろう。
     </p>
 
     <input id="big3a" placeholder="校閲指示">
@@ -90,7 +152,9 @@
 <footer>
   Page <span id="pageNum">2</span>
 </footer>
+
 </div>
+
 <script src="js/script.js"></script>
 </body>
 </html>
