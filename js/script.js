@@ -1,23 +1,14 @@
 /* ==========================================
 状態管理
 ========================================== */
-const TOTAL_PUZZLES = 11; // q1 + q2-8 + big1-3
+const TOTAL_PUZZLES = 11; // 小謎1 + 小謎2-8 + 大謎1-3
 let solvedCount = 0;
-const solved = {};
 
 /* ---- 進行率更新 ---- */
-function updateProgress(puzzleId){
-if(!solved[puzzleId]){
-solved[puzzleId]=true;
-solvedCount++;
-}
-const rate = Math.round((solvedCount/TOTAL_PUZZLES)*100);
-const progText = document.getElementById("progressText");
-if(progText) progText.textContent = 世界修正率：${rate}%;
-if(rate===100){
-const clearMsg = document.getElementById("toClear");
-if(clearMsg) clearMsg.style.display="block";
-}
+function updateProgress() {
+  const percent = Math.round((solvedCount / TOTAL_PUZZLES) * 100);
+  const el = document.getElementById("progressPercent");
+  if (el) el.textContent = percent + "%";
 }
 
 /* ==========================================
