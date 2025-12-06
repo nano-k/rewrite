@@ -1,74 +1,52 @@
-body {
-  margin: 0;
-  font-family: serif;
-  line-height: 1.8;
+/* ===== base / container ===== */
+:root{
+  --bg:#efece6; --paper:#fff; --ink:#222; --muted:#666;
+  --accent:#1f7a8c; --container-w:600px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Noto Serif JP", "Hiragino Mincho ProN", serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased;}
+.container{max-width:var(--container-w); margin:24px auto; background:var(--paper); border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.08); overflow:visible; position:relative; padding-bottom:80px;}
+.site-header{position:sticky; top:0; background:rgba(255,255,255,0.95); padding:14px 18px; text-align:center; font-weight:700; border-bottom:1px solid rgba(0,0,0,0.06); z-index:50;}
+.header-blocker{position:absolute; inset:0; pointer-events:auto; background:transparent;}
+#titleWrap{font-size:1.05rem; letter-spacing:0.02em;}
+#progressWrap{position:absolute; right:14px; top:14px; font-size:0.85rem; color:var(--muted);}
+
+/* ===== book / pages ===== */
+.book{padding:0 18px 30px 18px;}
+.book-inner{max-height:420px; overflow:hidden; transition:max-height .55s cubic-bezier(.2,.9,.2,1); position:relative;}
+.page{padding:34px 8px; border-bottom:1px dashed rgba(0,0,0,0.06); min-height:64vh;}
+.section-title{font-size:1.05rem; margin:0 0 10px 0; font-weight:700;}
+.meta{font-weight:700;margin-bottom:8px;}
+.body p{margin:0 0 12px 0; line-height:1.9; color:var(--muted);}
+.puzzle{margin-top:10px;background:#fcfcfc;padding:12px;border-radius:8px;border:1px solid #eee;}
+.puzzle-input{padding:8px 10px;border-radius:6px;border:1px solid #ddd;width:70%;max-width:320px;}
+.puzzle-btn{padding:8px 12px;margin-left:8px;border-radius:6px;background:var(--accent);border:none;color:#fff;cursor:pointer;}
+.result{margin-left:12px;font-weight:700;color:green;}
+.hint{font-size:0.9rem;color:var(--muted);margin-top:6px;}
+
+/* ===== 校了ボタン ===== */
+.kuryo-wrap{position:fixed; right:18px; bottom:18px; z-index:120;}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:#222;color:#fff;text-decoration:none;cursor:pointer;border:none;}
+.hidden{display:none;}
+
+/* ===== footer / page number ===== */
+.global-footer{position:fixed; bottom:10px; left:50%; transform:translateX(-50%); z-index:120; pointer-events:none; font-size:0.9rem; color:var(--muted); background:rgba(255,255,255,0.9); padding:6px 10px;border-radius:8px; border:1px solid rgba(0,0,0,0.04);}
+
+/* ===== vertical mode ===== */
+.container.vertical-mode { writing-mode: vertical-rl; }
+.container.vertical-mode .book-inner{ max-height: none; /* allow full read */ }
+.container.vertical-mode .page{ min-height: auto; }
+
+/* ===== responsive for small screens (<=480px) ===== */
+@media (max-width:480px){
+  :root{--container-w:94vw;}
+  .book-inner{max-height:68vh;}
+  .puzzle-input{width:100%;}
+  .site-header{padding:12px;}
+  .page{padding:24px 12px; min-height:60vh;}
+  .global-footer{bottom:6px;font-size:0.85rem;}
 }
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 15px;
-  text-align: center;
-  background: #fff;
-  border-bottom: 1px solid #ccc;
-  z-index: 1000;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.locked {
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-main {
-  margin-top: 80px;
-}
-
-.page {
-  padding: 80px 20px;
-  border-bottom: 1px solid #ddd;
-  min-height: 80vh;
-}
-
-.section-title {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
-
-input {
-  padding: 8px;
-  margin: 5px 0;
-  width: 80%;
-  max-width: 300px;
-}
-
-button, .next-btn {
-  padding: 10px 20px;
-  margin-top: 10px;
-  display: inline-block;
-  background: #333;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.result {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.hidden {
-  display: none;
-}
-
-footer {
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  opacity: 0.7;
-  font-size: 0.8rem;
-  pointer-events: none;
-}
+/* small utility */
+.center {text-align:center}
+.muted{color:var(--muted)}
