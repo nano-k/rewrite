@@ -94,15 +94,7 @@ button, .next-btn {
   display: none;
 }
 
-footer {
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  opacity: 0.7;
-  font-size: 0.8rem;
-  pointer-events: none;
-}
+
 
 /* ==========================================
    あとがき（縦書き） 
