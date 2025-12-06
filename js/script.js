@@ -37,14 +37,34 @@ function unlockPage(pageNumber) {
   if (page) {
     page.dataset.lock = "false";
     page.classList.remove("locked");
-    page.style.display = "block"; // ← 表示
+    page.style.display = "block"; // 表示
   }
+}
+
+/* ==========================================
+   滑らかスクロール（余韻あり）
+========================================== */
+function smoothScrollTo(targetY, duration = 1200) {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  const startTime = performance.now();
+
+  function step(currentTime) {
+    const time = Math.min(1, (currentTime - startTime) / duration);
+    const ease = 0.5 - 0.5 * Math.cos(Math.PI * time); // イージング
+    window.scrollTo(0, startY + distance * ease);
+    if (time < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
 }
 
 function showPage(pageNumber) {
   const target = document.querySelector(`.page[data-page="${pageNumber}"]`);
   if (target) {
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    const rect = target.getBoundingClientRect();
+    const targetY = window.scrollY + rect.top;
+    smoothScrollTo(targetY, 1200); // 1.2秒スクロール
   }
 }
 
@@ -57,7 +77,6 @@ function checkQ1() {
 
   if (ans === "かき" || ans === "カキ") {
     result.textContent = "正解！";
-
     unlockPage(3);
     showPage(3);
   } else {
@@ -84,7 +103,6 @@ function checkSmall(id, nextPage) {
 
   if (input === answers[id]) {
     result.textContent = "正解！";
-
     unlockPage(nextPage);
     showPage(nextPage);
   } else {
@@ -103,11 +121,8 @@ function checkBig1() {
 
   if (a === "こうえつしゃ" && b === "しょうせつ" && c === "なか") {
     result.textContent = "正解！";
-
     unlockPage(11);
-
     document.getElementById("headerTitle").classList.remove("locked");
-
     showPage(11);
   } else {
     result.textContent = "不正解";
@@ -115,7 +130,7 @@ function checkBig1() {
 }
 
 /* ==========================================
-   大謎2（ヘッダー）
+   大謎2（ヘッダークリック）
 ========================================== */
 const header = document.getElementById("headerTitle");
 if (header) {
@@ -124,16 +139,14 @@ if (header) {
       header.textContent = "校閲世界";
       document.getElementById("big2result").textContent =
         "正しく修正された。";
-
       unlockPage(12);
-
       showPage(12);
     }
   });
 }
 
 /* ==========================================
-   大謎3
+   大謎3（縦書き切替）
 ========================================== */
 function checkBig3() {
   const t = document.getElementById("big3a").value.trim();
@@ -142,53 +155,43 @@ function checkBig3() {
   if (t.includes("横") && t.includes("縦")) {
     document.body.style.writingMode = "vertical-rl";
     document.body.style.textOrientation = "upright";
-
     result.textContent = "世界が縦書きに戻った。";
 
     unlockPage(12);
     document.getElementById("toClear").classList.remove("hidden");
 
-    // ★ ここを追加：左端にスクロールを寄せる
-    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
-
+    // 左端にスクロール（余韻あり）
+    smoothScrollTo(0, 1500);
   } else {
     result.textContent = "指示が不完全です。";
   }
 }
 
 /* ==========================================
-   その他
+   Enterキーで送信
 ========================================== */
-/* ===== Enterキーで送信できるようにする ===== */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     const active = document.activeElement;
-
     if (active && active.tagName === "INPUT") {
-      e.preventDefault(); // フォームの変なリロード防止
-
+      e.preventDefault();
       const id = active.id;
 
-      // 小謎1専用
       if (id === "answer1") { checkQ1(); return; }
-
-      // 小謎2〜8
       if (["q2","q3","q4","q5","q6","q7","q8"].includes(id)) {
         const nextPageMap = { q2:4, q3:5, q4:6, q5:7, q6:8, q7:9, q8:10 };
         checkSmall(id,nextPageMap[id]);
         return;
       }
-
-      // 大謎1
       if (["big1a","big1b","big1c"].includes(id)) { checkBig1(); return; }
-
-      // 大謎3
       if (id === "big3a") { checkBig3(); return; }
     }
   }
 });
 
-/* ===== X投稿ボタン ===== */
+/* ==========================================
+   X投稿ボタン
+========================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const tweetBtn = document.getElementById("tweetBtn");
   if (!tweetBtn) return;
