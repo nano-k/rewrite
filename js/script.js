@@ -41,11 +41,13 @@ function unlockPage(pageNumber) {
   }
 }
 
-function showPage(pageNumber) {
-  const target = document.querySelector(`.page[data-page="${pageNumber}"]`);
-  if (target) {
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+function showPage(pageNumber, delay = 0) {
+const target = document.querySelector(.page[data-page="${pageNumber}"]);
+if (target) {
+setTimeout(() => {
+target.scrollIntoView({ behavior: "smooth", block: "start" });
+}, delay);
+}
 }
 
 /* ==========================================
@@ -59,7 +61,7 @@ function checkQ1() {
     result.textContent = "正解！";
 
     unlockPage(3);
-    showPage(3);
+    showPage(3,100);
   } else {
     result.textContent = "違います。";
   }
@@ -86,7 +88,7 @@ function checkSmall(id, nextPage) {
     result.textContent = "正解！";
 
     unlockPage(nextPage);
-    showPage(nextPage);
+    showPage(nextPage,100);
   } else {
     result.textContent = "違います。";
   }
@@ -108,7 +110,7 @@ function checkBig1() {
 
     document.getElementById("headerTitle").classList.remove("locked");
 
-    showPage(11);
+    showPage(11,100);
   } else {
     result.textContent = "不正解";
   }
@@ -135,32 +137,49 @@ if (header) {
 /* ==========================================
    大謎3
 ========================================== */
+let disablePullRefresh = false;
+
 function checkBig3() {
-  const t = document.getElementById("big3a").value.trim();
-  const result = document.getElementById("big3result");
+const t = document.getElementById("big3a").value.trim();
+const result = document.getElementById("big3result");
 
-  if (t.includes("横") && t.includes("縦")) {
-    result.textContent = "世界が縦書きに戻った。";
+if (t.includes("横") && t.includes("縦")) {
+document.body.style.writingMode = "vertical-rl";
+document.body.style.textOrientation = "upright";
 
-    // ページをアンロック＆あとがき表示
-    unlockPage(12);
-    document.getElementById("toClear").classList.remove("hidden");
+result.textContent = "世界が縦書きに戻った。";
 
-    // 縦書き切替
-    document.body.style.writingMode = "vertical-rl";
-    document.body.style.textOrientation = "upright";
+unlockPage(12);
+document.getElementById("toClear").classList.remove("hidden");
 
-    // 少し遅延させてからスクロール（スマホでも安定）
-    setTimeout(() => {
-      const header = document.getElementById("headerTitle");
-      if (header) header.classList.remove("locked"); // ヘッダーを再表示
-      showPage(12, 0); // あとがきページにスクロール
-    }, 200); // 0.2秒遅延
-  } else {
-    result.textContent = "指示が不完全です。";
-  }
+showPage(12, 400); // 少し余韻を持たせる
+
+// スマホのみプル・トゥ・リフレッシュ無効化
+if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+  disablePullRefresh = true;
 }
 
+// 左端にスクロール
+window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+
+} else {
+result.textContent = "指示が不完全です。";
+}
+}
+
+// プル・トゥ・リフレッシュ防止（スマホ）
+let touchStartY = 0;
+document.addEventListener("touchstart", (e) => {
+if (disablePullRefresh) touchStartY = e.touches[0].clientY;
+});
+
+document.addEventListener("touchmove", (e) => {
+if (disablePullRefresh) {
+const touchY = e.touches[0].clientY;
+const scrollTop = document.scrollingElement.scrollTop || document.body.scrollTop;
+if (scrollTop === 0 && touchY > touchStartY) e.preventDefault();
+}
+}, { passive: false });
 /* ==========================================
    その他
 ========================================== */
