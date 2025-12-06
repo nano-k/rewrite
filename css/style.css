@@ -28,6 +28,20 @@ header {
   text-align: center;
 }
 
+#headerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  background-color: #222;
+  color: #fff;
+}
+
+#progressContainer {
+  font-size: 0.9em;
+  color: #ffd700;
+}
+
 body[style*="writing-mode: vertical-rl"] header {
   writing-mode: horizontal-tb;  /* 横書き */
   line-height: 60px;
