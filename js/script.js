@@ -1,11 +1,30 @@
+/* --- ページロック機能 --- */
+const pages = document.querySelectorAll(".page");
+
+// ページロック：次のページを見えなくする
+function updatePageLocks() {
+  pages.forEach((page, idx) => {
+    const locked = page.dataset.lock === "true";
+    const next = pages[idx + 1];
+    if (!next) return;
+
+    if (locked) {
+      next.style.display = "none";
+    } else {
+      next.style.display = "block";
+    }
+  });
+}
+updatePageLocks();
+
 /* --- ノンブル変更 --- */
 const pageNum = document.getElementById("pageNum");
-const pages = document.querySelectorAll(".page");
 
 if (pageNum) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(ent => {
-      if (ent.isIntersecting) {
+      // ロックされたページはページ番号にならない
+      if (ent.isIntersecting && ent.target.dataset.lock === "false") {
         pageNum.textContent = ent.target.dataset.page;
       }
     });
@@ -14,13 +33,37 @@ if (pageNum) {
   pages.forEach(p => observer.observe(p));
 }
 
-/* --- 小謎1 --- */
+/* ------------------------
+   小謎1〜8（共通判定）
+------------------------ */
+
+// 小謎1専用
 function checkQ1() {
   const ans = document.getElementById("answer1").value;
   if (ans === "かき") {
     document.getElementById("q1result").textContent = "正解！";
+
+    // 小謎2 のロック解除
+    document.querySelector('[data-page="3"]').dataset.lock = "false";
+    updatePageLocks();
   } else {
     document.getElementById("q1result").textContent = "不正解";
+  }
+}
+
+/* ---- 小謎2〜8 の仮答え ---- */
+/* すべて answer = こたえ で正解とする */
+
+function checkSmall(id, nextPage) {
+  const box = document.getElementById(id);
+  const result = document.getElementById(id + "result");
+
+  if (box.value === "こたえ") {
+    result.textContent = "正解！";
+    document.querySelector(`[data-page="${nextPage}"]`).dataset.lock = "false";
+    updatePageLocks();
+  } else {
+    result.textContent = "不正解";
   }
 }
 
@@ -33,6 +76,10 @@ function checkBig1() {
   if (a === "こうえつしゃ" && b === "しょうせつ" && c === "なか") {
     document.getElementById("big1result").textContent = "正解！";
     document.getElementById("headerTitle").classList.remove("locked");
+
+    // 大謎2 のロック解除
+    document.querySelector('[data-page="11"]').dataset.lock = "false";
+    updatePageLocks();
   } else {
     document.getElementById("big1result").textContent = "不正解";
   }
@@ -45,6 +92,10 @@ if (header) {
     if (!header.classList.contains("locked")) {
       header.textContent = "校閲世界";
       document.getElementById("big2result").textContent = "正しく修正された。";
+
+      // 大謎3 のロック解除
+      document.querySelector('[data-page="12"]').dataset.lock = "false";
+      updatePageLocks();
     }
   });
 }
@@ -62,4 +113,3 @@ function checkBig3() {
     document.getElementById("big3result").textContent = "指示が不完全です。";
   }
 }
-
