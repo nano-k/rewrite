@@ -99,11 +99,6 @@ footer {
   font-weight: bold;
 }
 
-.kouryo {
-  margin-top: 250px;
-  font-size: 1.2rem;
-}
-
 
 /* ===== スマホ版レスポンシブ ===== */
 @media screen and (max-width: 480px) {
