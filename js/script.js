@@ -156,7 +156,9 @@ function checkBig3() {
   }
 }
 
-
+/* ==========================================
+   その他
+========================================== */
 // ===== Enterキーで送信できるようにする =====
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
@@ -199,6 +201,20 @@ document.addEventListener("keydown", (e) => {
         checkBig3();
         return;
       }
+// ===== X投稿 =====
+document.getElementById("tweetBtn").addEventListener("click", function () {
+  const text = "You rewrote the distorted 「検閲世界」. #検閲世界 #Web謎 @kotohano_nano";
+  const url  = "https://nano-k.github.io/rewrite/";
+
+  const tweetURL =
+    "https://twitter.com/intent/tweet?text=" +
+    encodeURIComponent(text) +
+    "&url=" +
+    encodeURIComponent(url);
+
+  window.open(tweetURL, "_blank");
+});
+
     }
   }
 });
