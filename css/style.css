@@ -124,6 +124,12 @@ footer {
   font-weight: bold;
 }
 
+.yoko {
+  writing-mode: horizontal-tb; /* 横書きに戻す */
+  display: inline-block;
+  line-height: 1;
+}
+
 /* 奥付の上に線を引き、文字をセンターにする */
 section.page h3 {
   border-top: 1px solid #ccc;
