@@ -159,7 +159,7 @@ function checkBig3() {
 /* ==========================================
    その他
 ========================================== */
-// ===== Enterキーで送信できるようにする =====
+/* ===== Enterキーで送信できるようにする ===== */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     const active = document.activeElement;
@@ -170,38 +170,25 @@ document.addEventListener("keydown", (e) => {
       const id = active.id;
 
       // 小謎1専用
-      if (id === "answer1") {
-        checkQ1();
-        return;
-      }
+      if (id === "answer1") { checkQ1(); return; }
 
       // 小謎2〜8
-      if (["q2", "q3", "q4", "q5", "q6", "q7", "q8"].includes(id)) {
-        const nextPageMap = {
-          q2: 4,
-          q3: 5,
-          q4: 6,
-          q5: 7,
-          q6: 8,
-          q7: 9,
-          q8: 10,
-        };
-        checkSmall(id, nextPageMap[id]);
+      if (["q2","q3","q4","q5","q6","q7","q8"].includes(id)) {
+        const nextPageMap = { q2:4, q3:5, q4:6, q5:7, q6:8, q7:9, q8:10 };
+        checkSmall(id,nextPageMap[id]);
         return;
       }
 
       // 大謎1
-      if (["big1a", "big1b", "big1c"].includes(id)) {
-        checkBig1();
-        return;
-      }
+      if (["big1a","big1b","big1c"].includes(id)) { checkBig1(); return; }
 
       // 大謎3
-      if (id === "big3a") {
-        checkBig3();
-        return;
-      }
-// ===== X投稿 =====
+      if (id === "big3a") { checkBig3(); return; }
+    }
+  }
+});
+
+/* ===== X投稿ボタン ===== */
 document.addEventListener("DOMContentLoaded", () => {
   const tweetBtn = document.getElementById("tweetBtn");
   if (!tweetBtn) return;
@@ -221,5 +208,3 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(tweetURL, "_blank");
   });
 });
-
-
