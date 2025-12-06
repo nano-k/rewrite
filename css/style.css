@@ -104,6 +104,15 @@ footer {
   font-weight: bold;
 }
 
+/* 奥付の上に線を引き、文字をセンターにする */
+section.page h3 {
+  border-top: 1px solid #ccc; /* 線の色や太さを調整 */
+  padding-top: 10px;          /* 線と文字の間の余白 */
+  text-align: center;          /* 文字を中央揃え */
+  margin-top: 40px;            /* 前の要素との余白調整 */
+  font-weight: normal;         /* 必要に応じて文字の太さ調整 */
+}
+
 
 /* ===== スマホ版レスポンシブ ===== */
 @media screen and (max-width: 480px) {
