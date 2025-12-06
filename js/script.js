@@ -59,7 +59,7 @@ function checkQ1() {
     result.textContent = "正解！";
 
     unlockPage(3);
-    showPage(3,100);
+    showPage(3,300);
   } else {
     result.textContent = "違います。";
   }
