@@ -103,6 +103,77 @@ footer {
   margin-top: 250px;
   font-size: 1.2rem;
 }
+
+
 /* ===== スマホ版レスポンシブ ===== */
 @media screen and (max-width: 480px) {
+
+  /* 余白調整（スマホだと広めの余白が読みやすい） */
+  .container {
+    padding: 12px 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
+
+  /* セクションタイトル */
+  .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  /* 本文 */
+  p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    margin-bottom: 14px;
+  }
+
+  /* 入力欄とボタン */
+  input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+
+  /* ナビゲーション（フッター） */
+  footer {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  /* ===== 縦書き時（大謎3以降） ===== */
+  body[style*="writing-mode: vertical-rl"] {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  /* 縦書きのときのページ */
+  body[style*="writing-mode: vertical-rl"] .page {
+    writing-mode: vertical-rl;
+    padding: 20px 0;
+    min-height: 90vh;
+    box-sizing: border-box;
+  }
+
+  /* 縦書きでもタップしやすいボタンに */
+  body[style*="writing-mode: vertical-rl"] .next-btn {
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 20px;
+    display: inline-block;
+  }
+}
