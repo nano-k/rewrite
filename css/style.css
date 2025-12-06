@@ -1,3 +1,6 @@
+/* ==========================================
+   基本スタイル
+========================================== */
 body {
   margin: 0;
   padding: 0;
@@ -9,18 +12,17 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 60px;           /* 高さを固定 */
-  line-height: 60px;      /* 高さと同じにして縦中央 */
-  text-align: center;     /* 横中央 */
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
   background: #fff;
   border-bottom: 1px solid #ccc;
   z-index: 1000;
   font-weight: bold;
   font-size: 1.2rem;
-  box-sizing: border-box; /* パディング込みで高さを調整 */
-  padding: 0 15px;        /* 横余白だけ */
+  box-sizing: border-box;
+  padding: 0 15px;
 }
-
 
 .container {
   max-width: 600px;  
@@ -64,6 +66,8 @@ button, .next-btn {
   color: #fff;
   text-decoration: none;
   cursor: pointer;
+  font-size: 0.9rem;
+  width: auto;  /* デフォルトは横幅固定にしない */
 }
 
 .result {
@@ -85,13 +89,15 @@ footer {
   pointer-events: none;
 }
 
-/* あとがき */
+/* ==========================================
+   あとがき（縦書き） 
+========================================== */
 .tate {
   writing-mode: vertical-rl;
   text-orientation: upright;
   line-height: 2.2;
-  margin: 10px auto;
-  padding: 0px;
+  margin: 10px auto 0 auto; /* 上余白を少なく */
+  padding: 0;
   width: max-content;
   font-size: 1.1rem;
 }
@@ -99,22 +105,34 @@ footer {
 .tate .section-title {
   writing-mode: vertical-rl;
   text-orientation: upright;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
   font-size: 1.4rem;
   font-weight: bold;
 }
 
 /* 奥付の上に線を引き、文字をセンターにする */
 section.page h3 {
-  border-top: 1px solid #ccc; /* 線の色や太さを調整 */
-  padding-top: 10px;          /* 線と文字の間の余白 */
-  text-align: center;          /* 文字を中央揃え */
-  margin-top: 40px;            /* 前の要素との余白調整 */
-  font-weight: normal;         /* 必要に応じて文字の太さ調整 */
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: normal;
 }
 
+/* ==========================================
+   縦書き専用ボタン（大謎3以降） 
+========================================== */
+body[style*="writing-mode: vertical-rl"] .next-btn {
+  font-size: 1rem;
+  padding: 10px 15px;
+  margin-top: 20px;
+  display: inline-block;
+  width: auto; /* 横幅100%ではなくコンテンツ幅に */
+}
 
-/* ===== スマホ版レスポンシブ ===== */
+/* ==========================================
+   スマホレスポンシブ
+========================================== */
 @media screen and (max-width: 480px) {
   
   header {
@@ -123,24 +141,19 @@ section.page h3 {
     font-size: 1rem;
     padding: 0 10px;
   }
-}
 
-
-  /* 余白調整（スマホだと広めの余白が読みやすい） */
   .container {
     padding: 12px 10px;
     width: 100%;
     box-sizing: border-box;
   }
 
-  /* セクションタイトル */
   .section-title {
     font-size: 1.1rem;
     margin-bottom: 10px;
     letter-spacing: 0.05em;
   }
 
-  /* 本文 */
   p {
     font-size: 0.95rem;
     line-height: 1.7;
@@ -148,7 +161,6 @@ section.page h3 {
     margin-bottom: 14px;
   }
 
-  /* 入力欄とボタン */
   input {
     width: 100%;
     font-size: 1rem;
@@ -158,19 +170,18 @@ section.page h3 {
   }
 
   button {
-    width: 100%;
+    width: 100%; /* 横書きの小ボタンはスマホで幅いっぱいに */
     padding: 10px;
     font-size: 1rem;
     margin-bottom: 14px;
   }
 
-  /* ナビゲーション（フッター） */
   footer {
     font-size: 0.9rem;
     padding: 8px 0;
   }
 
-  /* ===== 縦書き時（大謎3以降） ===== */
+  /* 縦書き時の調整 */
   body[style*="writing-mode: vertical-rl"] {
     padding: 0;
     margin: 0;
@@ -179,7 +190,6 @@ section.page h3 {
     text-orientation: upright;
   }
 
-  /* 縦書きのときのページ */
   body[style*="writing-mode: vertical-rl"] .page {
     writing-mode: vertical-rl;
     padding: 20px 0;
@@ -187,11 +197,7 @@ section.page h3 {
     box-sizing: border-box;
   }
 
-  /* 縦書きでもタップしやすいボタンに */
   body[style*="writing-mode: vertical-rl"] .next-btn {
-    font-size: 1rem;
-    padding: 10px;
-    margin-top: 20px;
-    display: inline-block;
+    width: auto; /* 縦書きでは幅は固定せず */
   }
 }
