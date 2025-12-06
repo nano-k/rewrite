@@ -135,6 +135,9 @@ if (header) {
 /* ==========================================
    大謎3
 ========================================== */
+let disablePullRefresh = false;
+
+// 大謎3クリア時
 function checkBig3() {
   const t = document.getElementById("big3a").value.trim();
   const result = document.getElementById("big3result");
@@ -142,19 +145,41 @@ function checkBig3() {
   if (t.includes("横") && t.includes("縦")) {
     document.body.style.writingMode = "vertical-rl";
     document.body.style.textOrientation = "upright";
-
     result.textContent = "世界が縦書きに戻った。";
 
     unlockPage(12);
     document.getElementById("toClear").classList.remove("hidden");
+    showPage(12, 400);
 
-    // ★ ここを追加：左端にスクロールを寄せる
-    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
-
+    // ★スマホ版のみプル・トゥ・リフレッシュ無効化
+    if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+      disablePullRefresh = true;
+    }
   } else {
     result.textContent = "指示が不完全です。";
   }
 }
+
+// プル・トゥ・リフレッシュ防止
+let touchStartY = 0;
+document.addEventListener("touchstart", (e) => {
+  if (disablePullRefresh) {
+    touchStartY = e.touches[0].clientY;
+  }
+});
+
+document.addEventListener("touchmove", (e) => {
+  if (disablePullRefresh) {
+    const touchY = e.touches[0].clientY;
+    const scrollTop = document.scrollingElement.scrollTop || document.body.scrollTop;
+
+    // ページ先頭で下方向スクロールの時のみ無効化
+    if (scrollTop === 0 && touchY > touchStartY) {
+      e.preventDefault();
+    }
+  }
+}, { passive: false });
+
 
 /* ==========================================
    その他
