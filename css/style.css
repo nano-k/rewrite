@@ -30,15 +30,18 @@ header {
 
 
 #progressContainer {
-  position: fixed;
-  bottom: 0;
-  left: 10px; /* 少し余白 */
-  width: auto;
-  background: rgba(255,255,255,0.9);
-  padding: 5px 10px;
-  z-index: 999;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  position: fixed;          /* 画面に固定 */
+  bottom: 10px;             /* 下から少し余白 */
+  left: 10px;               /* 左から少し余白 */
+  font-size: 12px;          /* 小さめ文字 */
+  background: rgba(255, 255, 255, 0.8); /* 半透明で邪魔にならない */
+  padding: 2px 6px;
+  border-radius: 4px;       /* 角丸 */
+  z-index: 999;             /* 前面表示 */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  pointer-events: none;     /* クリックなどを邪魔しない */
 }
+
 
 
 body[style*="writing-mode: vertical-rl"] header {
