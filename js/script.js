@@ -247,5 +247,3 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(tweetURL, "_blank");
   });
 });
-
-他の問題もおねがいｓましうｓ
