@@ -29,14 +29,6 @@ header {
 }
 
 
-#progressContainer {
-  color: #ffd700;
-  z-index: 999;             /* 前面表示 */
-  pointer-events: none;     /* クリックなどを邪魔しない */
-}
-
-
-
 body[style*="writing-mode: vertical-rl"] header {
   writing-mode: horizontal-tb;  /* 横書き */
   line-height: 60px;
