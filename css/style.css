@@ -100,8 +100,7 @@ footer {
 }
 
 .kouryo {
-  margin-top: 80px; /* ←ここで下に落ちる（もっと増やせる） */
-  font-weight: bold;
+  margin-top: 250px;
   font-size: 1.2rem;
 }
 /* ===== スマホ版レスポンシブ ===== */
