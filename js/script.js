@@ -41,7 +41,7 @@ function unlockPage(pageNumber) {
   }
 }
 
-function showPage(pageNumber, delay = 0) {
+function showPage(pageNumber) {
   const target = document.querySelector(`.page[data-page="${pageNumber}"]`);
   if (target) {
     target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -59,7 +59,7 @@ function checkQ1() {
     result.textContent = "正解！";
 
     unlockPage(3);
-    showPage(3,300);
+    showPage(3);
   } else {
     result.textContent = "違います。";
   }
@@ -85,7 +85,7 @@ function checkSmall(id, nextPage) {
   if (input === answers[id]) {
     result.textContent = "正解！";
 
-    unlockPage(nextPage,100);
+    unlockPage(nextPage);
     showPage(nextPage);
   } else {
     result.textContent = "違います。";
@@ -108,7 +108,7 @@ function checkBig1() {
 
     document.getElementById("headerTitle").classList.remove("locked");
 
-    showPage(11,100);
+    showPage(11);
   } else {
     result.textContent = "不正解";
   }
@@ -127,7 +127,7 @@ if (header) {
 
       unlockPage(12);
 
-      showPage(12,0);
+      showPage(12);
     }
   });
 }
@@ -140,17 +140,22 @@ function checkBig3() {
   const result = document.getElementById("big3result");
 
   if (t.includes("横") && t.includes("縦")) {
-    document.body.style.writingMode = "vertical-rl";
-    document.body.style.textOrientation = "upright";
-
     result.textContent = "世界が縦書きに戻った。";
 
+    // ページをアンロック＆あとがき表示
     unlockPage(12);
     document.getElementById("toClear").classList.remove("hidden");
 
-    // ★ ここを追加：左端にスクロールを寄せる
-    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+    // 縦書き切替
+    document.body.style.writingMode = "vertical-rl";
+    document.body.style.textOrientation = "upright";
 
+    // 少し遅延させてからスクロール（スマホでも安定）
+    setTimeout(() => {
+      const header = document.getElementById("headerTitle");
+      if (header) header.classList.remove("locked"); // ヘッダーを再表示
+      showPage(12, 0); // あとがきページにスクロール
+    }, 200); // 0.2秒遅延
   } else {
     result.textContent = "指示が不完全です。";
   }
@@ -208,5 +213,3 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(tweetURL, "_blank");
   });
 });
-
-他の問題もおねがいｓましうｓ
