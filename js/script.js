@@ -1,4 +1,26 @@
 /* ==========================================
+   初期ロック処理
+========================================== */
+
+// 初期状態：data-lock="true" のページは非表示
+pages.forEach(p => {
+  if (p.dataset.lock === "true") {
+    p.style.display = "none";
+  }
+});
+
+// ロック解除時の動作を上書き
+function unlockPage(pageNumber) {
+  const page = document.querySelector(`.page[data-page="${pageNumber}"]`);
+  if (page) {
+    page.dataset.lock = "false";
+    page.classList.remove("locked");
+    page.style.display = "block"; // ← ロック解除で表示
+  }
+}
+
+
+/* ==========================================
    ノンブル更新：IntersectionObserver
 ========================================== */
 const pageNum = document.getElementById("pageNum");
