@@ -80,13 +80,13 @@ footer {
   pointer-events: none;
 }
 
-/* あとがき */
+/* あとがき  */
 .tate {
   writing-mode: vertical-rl;
   text-orientation: upright;
   line-height: 2.2;
-  margin: 10px auto;
-  padding: 0px;
+  margin: 0; /* ヘッダー直下に */
+  padding: 0;
   width: max-content;
   font-size: 1.1rem;
 }
@@ -94,7 +94,7 @@ footer {
 .tate .section-title {
   writing-mode: vertical-rl;
   text-orientation: upright;
-  margin-bottom: 20px;
+  margin: 0 0 1em 0; /* タイトルと本文の間に少しだけ余白 */
   font-size: 1.4rem;
   font-weight: bold;
 }
