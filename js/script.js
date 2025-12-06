@@ -1,17 +1,4 @@
 /* ==========================================
-状態管理
-========================================== */
-const TOTAL_PUZZLES = 11; // 小謎1 + 小謎2-8 + 大謎1-3
-let solvedCount = 0;
-
-/* ---- 進行率更新 ---- */
-function updateProgress() {
-  const percent = Math.round((solvedCount / TOTAL_PUZZLES) * 100);
-  const el = document.getElementById("progressPercent");
-  if (el) el.textContent = percent + "%";
-}
-
-/* ==========================================
    初期ロック処理
 ========================================== */
 const pageNum = document.getElementById("pageNum");
@@ -73,7 +60,6 @@ function checkQ1() {
 
     unlockPage(3);
     showPage(3);
-    solvedCount++; updateProgress();
   } else {
     result.textContent = "違います。";
   }
@@ -98,7 +84,6 @@ function checkSmall(id, nextPage) {
 
   if (input === answers[id]) {
     result.textContent = "正解！";
-    solvedCount++; updateProgress();
     unlockPage(nextPage);
     showPage(nextPage);
   } else {
@@ -117,7 +102,6 @@ function checkBig1() {
 
   if (a === "こうえつしゃ" && b === "しょうせつ" && c === "なか") {
     result.textContent = "正解！";
-    solvedCount++; updateProgress();
     unlockPage(11);
 
     document.getElementById("headerTitle").classList.remove("locked");
@@ -140,7 +124,6 @@ if (header) {
         "正しく修正された。";
 
       unlockPage(12);
-      solvedCount++; updateProgress();
       showPage(12);
     }
   });
@@ -160,7 +143,6 @@ function checkBig3() {
     document.body.style.writingMode = "vertical-rl";
     document.body.style.textOrientation = "upright";
     result.textContent = "世界が縦書きに戻った。";
-    solvedCount++; updateProgress();
     unlockPage(12);
     document.getElementById("toClear").classList.remove("hidden");
     showPage(12, 400);
