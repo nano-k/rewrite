@@ -92,14 +92,15 @@ button, .next-btn {
 footer {
   position: fixed;
   bottom: 10px;
-  left: 10px;
-  font-size: 0.8rem;
+  width: 100%;
+  text-align: center;
   opacity: 0.7;
+  font-size: 0.8rem;
   pointer-events: none;
-  display: flex;       /* 横並びにする */
-  align-items: center; /* 縦中央揃え */
-  gap: 20px;           /* 文字間の隙間 */
+  display: flex;
+  gap: 10px; 
 }
+
 
 /* ==========================================
    あとがき（縦書き） 
