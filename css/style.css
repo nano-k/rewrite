@@ -30,16 +30,16 @@ header {
 
 
 #progressContainer {
-  position: fixed;   /* 画面に固定 */
-  bottom: 0;         /* 下端に配置 */
-  left: 0;           /* 左端揃え */
-  width: 100%;       /* 横幅いっぱい */
-  background: rgba(255,255,255,0.9); /* 透過白で文字見やすく */
+  position: fixed;
+  bottom: 0;
+  left: 10px; /* 少し余白 */
+  width: auto;
+  background: rgba(255,255,255,0.9);
   padding: 5px 10px;
-  text-align: left;
-  z-index: 999;      /* ヘッダーより前面に表示 */
+  z-index: 999;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
 }
+
 
 body[style*="writing-mode: vertical-rl"] header {
   writing-mode: horizontal-tb;  /* 横書き */
