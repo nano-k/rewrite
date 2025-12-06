@@ -73,7 +73,7 @@ function checkQ1() {
 
     unlockPage(3);
     showPage(3);
-    updateProgress("q1"); // ←ここで進行率更新
+    solvedCount++; updateProgress();
   } else {
     result.textContent = "違います。";
   }
@@ -98,7 +98,7 @@ function checkSmall(id, nextPage) {
 
   if (input === answers[id]) {
     result.textContent = "正解！";
-　　updateProgress(id);
+　　solvedCount++; updateProgress();
     unlockPage(nextPage);
     showPage(nextPage);
   } else {
@@ -117,7 +117,7 @@ function checkBig1() {
 
   if (a === "こうえつしゃ" && b === "しょうせつ" && c === "なか") {
     result.textContent = "正解！";
-　　updateProgress("big1");
+　　 solvedCount++; updateProgress();
     unlockPage(11);
 
     document.getElementById("headerTitle").classList.remove("locked");
@@ -140,7 +140,7 @@ if (header) {
         "正しく修正された。";
 
       unlockPage(12);
-　　　updateProgress("big2");
+　　　 solvedCount++; updateProgress();
       showPage(12);
     }
   });
@@ -160,7 +160,7 @@ function checkBig3() {
     document.body.style.writingMode = "vertical-rl";
     document.body.style.textOrientation = "upright";
     result.textContent = "世界が縦書きに戻った。";
-　　updateProgress("big3");
+　　solvedCount++; updateProgress();
     unlockPage(12);
     document.getElementById("toClear").classList.remove("hidden");
     showPage(12, 400);
