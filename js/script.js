@@ -145,8 +145,14 @@ function checkBig3() {
 
     result.textContent = "世界が縦書きに戻った。";
 
+    unlockPage(12);
     document.getElementById("toClear").classList.remove("hidden");
+
+    // ★ ここを追加：左端にスクロールを寄せる
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+
   } else {
     result.textContent = "指示が不完全です。";
   }
 }
+
