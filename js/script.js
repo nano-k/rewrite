@@ -47,7 +47,7 @@ function checkQ1() {
   const ans = document.getElementById("answer1").value.trim();
   const result = document.getElementById("q1result");
 
-  if (ans === "かきね" || ans === "カキネ") {
+  if (ans === "かき" || ans === "カキ") {
     result.textContent = "正解！";
 
     unlockPage(2); // 小謎1
