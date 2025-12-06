@@ -80,6 +80,18 @@ footer {
   pointer-events: none;
 }
 
+/* あとがき縦書き専用 */
+.tate {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  line-height: 2.2;
+  margin: 20px auto;
+  padding: 10px;
+  width: max-content;
+  font-size: 1.1rem;
+}
+
+
 /* ===== スマホ版レスポンシブ ===== */
 @media screen and (max-width: 480px) {
   }
