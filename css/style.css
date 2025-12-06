@@ -9,14 +9,18 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 15px;
-  text-align: center;
+  height: 60px;           /* 高さを固定 */
+  line-height: 60px;      /* 高さと同じにして縦中央 */
+  text-align: center;     /* 横中央 */
   background: #fff;
   border-bottom: 1px solid #ccc;
   z-index: 1000;
   font-weight: bold;
   font-size: 1.2rem;
+  box-sizing: border-box; /* パディング込みで高さを調整 */
+  padding: 0 15px;        /* 横余白だけ */
 }
+
 
 .container {
   max-width: 600px;  
@@ -103,6 +107,15 @@ footer {
 
 /* ===== スマホ版レスポンシブ ===== */
 @media screen and (max-width: 480px) {
+  
+  header {
+    height: 50px;
+    line-height: 50px;
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
 
   /* 余白調整（スマホだと広めの余白が読みやすい） */
   .container {
