@@ -80,7 +80,7 @@ footer {
   pointer-events: none;
 }
 
-/* あとがき縦書き専用 */
+/* あとがき */
 .tate {
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -99,7 +99,11 @@ footer {
   font-weight: bold;
 }
 
-
+.kouryo {
+  margin-top: 80px; /* ←ここで下に落ちる（もっと増やせる） */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
 /* ===== スマホ版レスポンシブ ===== */
 @media screen and (max-width: 480px) {
   }
