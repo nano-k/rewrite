@@ -202,20 +202,24 @@ document.addEventListener("keydown", (e) => {
         return;
       }
 // ===== X投稿 =====
-document.getElementById("tweetBtn").addEventListener("click", function () {
-  const text = "You rewrote the distorted 「検閲世界」. #検閲世界 #Web謎 @kotohano_nano";
-  const url  = "https://nano-k.github.io/rewrite/";
+document.addEventListener("DOMContentLoaded", () => {
+  const tweetBtn = document.getElementById("tweetBtn");
+  if (!tweetBtn) return;
 
-  const tweetURL =
-    "https://twitter.com/intent/tweet?text=" +
-    encodeURIComponent(text) +
-    "&url=" +
-    encodeURIComponent(url);
+  tweetBtn.addEventListener("click", function (e) {
+    e.preventDefault();
 
-  window.open(tweetURL, "_blank");
+    const text = "You rewrote the distorted 「検閲世界」. #検閲世界 #Web謎 @kotohano_nano";
+    const url  = "https://nano-k.github.io/rewrite/";
+
+    const tweetURL =
+      "https://twitter.com/intent/tweet?text=" +
+      encodeURIComponent(text) +
+      "&url=" +
+      encodeURIComponent(url);
+
+    window.open(tweetURL, "_blank");
+  });
 });
 
-    }
-  }
-});
 
