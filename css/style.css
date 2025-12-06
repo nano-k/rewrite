@@ -28,14 +28,6 @@ header {
   text-align: center;
 }
 
-#headerTitle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-  background-color: #222;
-  color: #fff;
-}
 
 #progressContainer {
   font-size: 0.9em;
