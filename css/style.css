@@ -79,3 +79,10 @@ footer {
   font-size: 0.8rem;
   pointer-events: none;
 }
+
+/* ===== スマホ版レスポンシブ ===== */
+@media screen and (max-width: 480px) {
+
+  .container {
+    padding: 0 20px; 
+  }
