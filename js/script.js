@@ -139,21 +139,35 @@ function checkBig1() {
 }
 
 /* ==========================================
-   大謎2（ヘッダー）
+   大謎2（ヘッダークリックで突破）
 ========================================== */
+
 const header = document.getElementById("headerTitle");
+
 if (header) {
   header.addEventListener("click", () => {
-    if (!header.classList.contains("locked")) {
-      header.textContent = "校閲世界";
-      document.getElementById("big2result").textContent =
-        "正しく修正された。";
+    const page11 = document.querySelector('.page[data-page="11"]');
 
-      unlockPage(12);
-      showPage(12);
-    }
+    // すでに解除済みなら何もしない
+    if (page11.dataset.lock === "false") return;
+
+    // ヘッダー修正
+    header.textContent = "校閲世界";
+    document.getElementById("big2result").textContent =
+      "正しく修正された。";
+
+    // ロック解除
+    page11.dataset.lock = "false";
+
+    // 進捗反映（data-progress="4"）
+    updateProgress(11);
+
+    // 次ページへ（page12）
+    showPage(12 - 2); // page12は data-page="12" → index10
   });
 }
+
+
 
 /* ==========================================
    大謎3
