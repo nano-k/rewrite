@@ -77,7 +77,7 @@ function checkSmall(id, nextPage) {
     q3: "よみ",
     q4: "ごじ",
     q5: "よはく",
-    q6: "るび",
+    q6: "とる",
     q7: "きごう",
     q8: "校閲者"
   };
