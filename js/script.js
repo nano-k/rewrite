@@ -143,7 +143,6 @@ function checkBig1() {
 ========================================== */
 
 const header = document.getElementById("headerTitle");
-
 if (header) {
   header.addEventListener("click", () => {
     const page11 = document.querySelector('.page[data-page="11"]');
@@ -157,22 +156,17 @@ if (header) {
     header.textContent = "校閲世界";
     result.textContent = "正しく修正された。";
 
-    // page11ロック解除＆進捗反映
-    page11.dataset.lock = "false";
-    updateProgress(page11);
-    page11.style.display = "block";
+    // unlockPageを使って統一的に解除・表示・進捗反映
+    unlockPage(11);
 
-    // 次ページも解除して表示
-    if (page12) {
-      page12.dataset.lock = "false";
-      page12.style.display = "block";
-      updateProgress(page12); // 次ページの進捗があれば加算
-    }
+    // 次ページも解除（data-progressあれば進捗反映）
+    if (page12) unlockPage(12);
 
     // page12へスクロール
     showPage(12);
   });
 }
+
 
 
 
