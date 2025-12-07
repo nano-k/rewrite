@@ -150,18 +150,19 @@ if (header) {
     const page12 = document.querySelector('.page[data-page="12"]');
     const result = document.getElementById("big2result");
 
-    if (!page11 || page11.dataset.lock === "false") return;
-
+    // とりあえず条件なしで反応
     header.textContent = "校閲世界";
     result.textContent = "正しく修正された。";
 
-    // unlockPage() で解除＆進捗加算
-    unlockPage(11);
+    // ページのロック解除＆表示
+    if (page11) unlockPage(11);
     if (page12) unlockPage(12);
 
-    showPage(12);
+    // 大謎2にスクロール
+    showPage(11);
   });
 }
+
 
 
 /* ==========================================
