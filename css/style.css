@@ -108,7 +108,7 @@ footer {
 ========================================== */
 .tate {
   writing-mode: vertical-rl;
-  text-orientation: upright;
+  text-orientation: mixed;
   line-height: 2.2;
   margin: 10px auto 0 auto; /* 上余白を少なく */
   padding: 0;
