@@ -119,6 +119,9 @@ footer {
   overflow-wrap: break-word;
 }
 
+.tate p {
+  display: inline;
+}
 
 .tate .section-title {
   writing-mode: vertical-rl;
