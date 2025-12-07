@@ -112,15 +112,13 @@ footer {
   font-size: 1.1rem;
   line-height: 2.2;
   height: calc(1em * 30 * 2.2);
+   inline-size: calc(1em * 2.2 * 30);
   margin: 10px auto 0 auto;
   padding: 0;
   max-width: none;
   width: auto;
   overflow-wrap: break-word;
-}
-
-.tate p {
-  display: inline;
+  white-space: normal;
 }
 
 .tate .section-title {
