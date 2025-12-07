@@ -82,12 +82,12 @@ function checkQ1() {
   const ans = document.getElementById("answer1").value.trim();
   const result = document.getElementById("q1result");
 
-  if (ans === "かき" || ans === "カキ") {
-    result.textContent = "正解！";
+  if (ans === "かき") {
+    result.textContent = "勢い良く扉が開いた。";
     unlockPage(3);
     showPage(3);
   } else {
-    result.textContent = "違います。";
+    result.textContent = "何かが違うようだ。";
   }
 }
 
