@@ -121,7 +121,7 @@ footer {
   /* その他の設定 */
   margin: 10px auto 0 auto;
   padding: 0;
-  width: max-content;
+  width: auto;
   overflow-wrap: break-word;
 }
 
