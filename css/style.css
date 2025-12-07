@@ -86,18 +86,27 @@ button, .next-btn {
 }
 
 .puzzle-box {
-  border: 2px solid #555;       /* 枠線 */
+  border: 2px solid #555;       /* □枠 */
   padding: 10px;
   margin: 20px 0;
-  display: inline-block;
-  max-width: 90%;               /* スマホ対応 */
+  display: flex;                 /* flexで中央揃え */
+  justify-content: center;       /* 横方向中央 */
+  align-items: center;           /* 縦方向中央 */
+  text-align: center;            /* テキスト中央 */
+  max-width: 90%;                /* スマホ対応 */
   box-sizing: border-box;
-  background-color: #fefefe;    /* 背景色 optional */
+  background-color: #fefefe;
+  white-space: pre-wrap;         /* 改行を保持 */
 }
 
+/* 縦書き専用の調整（tateクラス内） */
 .tate .puzzle-box {
+  writing-mode: vertical-rl;     /* 縦書き */
+  text-orientation: upright;
+  padding: 1em;
   margin: 1em 0;
 }
+
 
 .hidden {
   display: none;
