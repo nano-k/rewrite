@@ -163,7 +163,7 @@ if (header) {
     updateProgress(11);
 
     // 次ページへ（page12）
-    showPage(12 - 2); // page12は data-page="12" → index10
+    showPage(12); // 
   });
 }
 
