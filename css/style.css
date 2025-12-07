@@ -70,33 +70,29 @@ input {
 
 .input-row {
   display: flex;
-  align-items: center;  /* 高さを揃える */
-  gap: 4px;              /* 入力欄とボタンの間隔 */
+  align-items: center;   /* 高さ中央揃え */
+  gap: 4px;
 }
 
-.input-row input {
-  font-family: "ヒラギノ明朝 Pro","Hiragino Mincho Pro", "ＭＳ 明朝", "MS Mincho", serif;
+.input-row input,
+.input-row button {
+  font-family: "ヒラギノ明朝 Pro","Hiragino Mincho Pro","ＭＳ 明朝","MS Mincho",serif;
   font-size: 1rem;
   line-height: 1.5;
   padding: 0.5em 0.8em;
+  margin: 0;
   box-sizing: border-box;
-  margin: 0;              /* デフォルトマージンを消す */
+  height: 2.4em;       /* 高さを固定して揃える */
 }
 
 .input-row button {
-  flex: none;                /* 高さ揃えのため残す */
-  white-space: nowrap;       /* 折り返し防止 */
-  background-color: #000;    /* 黒背景 */
-  color: #fff;               /* 白文字 */
-  border: none;              /* 枠線なし */
-  border-radius: 0;          /* 角丸なし */
-  cursor: pointer;           /* ホバー時の指マーク */
-  padding: 0.5em 0.8em;      /* 入力欄と揃える */
-  font-family: "ヒラギノ明朝 Pro","Hiragino Mincho Pro", "ＭＳ 明朝", "MS Mincho", serif;
-  font-size: 1rem;
-  line-height: 1.5;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
 }
-
 
 
 .input-row input {
