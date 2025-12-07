@@ -77,10 +77,12 @@ input {
 .input-row input,
 .input-row button {
   font-size: 1rem;
+  line-height: 1.5;
   padding: 0.5em 0.8em;
   box-sizing: border-box;
-  line-height: 1.5;
+  margin: 0;              /* デフォルトマージンを消す */
 }
+
 
 .input-row input {
   flex: 1;               /* 入力欄を横に伸ばす */
