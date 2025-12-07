@@ -123,10 +123,9 @@ function checkSmall(id, nextPage) {
 function checkBig1() {
   const a = document.getElementById("big1a").value.trim();
   const b = document.getElementById("big1b").value.trim();
-  const c = document.getElementById("big1c").value.trim();
   const result = document.getElementById("big1result");
 
-  if (a === "こうえつしゃ" && b === "しょうせつ" && c === "なか") {
+  if (a === "しょうせつ" && b === "なか") {
     result.textContent = "正解！";
     unlockPage(11);
 
