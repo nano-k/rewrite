@@ -143,6 +143,7 @@ function checkBig1() {
 ========================================== */
 
 const header = document.getElementById("headerTitle");
+
 if (header) {
   header.addEventListener("click", () => {
     const page11 = document.querySelector('.page[data-page="11"]');
@@ -150,26 +151,21 @@ if (header) {
     const result = document.getElementById("big2result");
 
     // すでに解除済みなら何もしない
-    if (page11.dataset.lock === "false") return;
+    if (!page11 || page11.dataset.lock === "false") return;
 
     // ヘッダー修正
     header.textContent = "校閲世界";
     result.textContent = "正しく修正された。";
 
-    // unlockPageを使って統一的に解除・表示・進捗反映
+    // unlockPage() で統一的に解除＆進捗反映
     unlockPage(11);
 
-    // 次ページも解除（data-progressあれば進捗反映）
     if (page12) unlockPage(12);
 
     // page12へスクロール
     showPage(12);
   });
 }
-
-
-
-
 
 /* ==========================================
    大謎3
