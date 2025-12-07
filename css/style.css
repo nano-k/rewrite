@@ -211,20 +211,39 @@ body[style*="writing-mode: vertical-rl"] .next-btn {
   width: auto; /* 横幅100%ではなくコンテンツ幅に */
 }
 
-/* 縦書きページ専用 */
+/* 縦書きページの横並び入力欄 */
 body[style*="writing-mode: vertical-rl"] .input-row {
-  flex-direction: column;      /* 横並びではなく縦並びに */
-  align-items: flex-start;     /* 左寄せ（縦書きだと右寄せでも可） */
-  gap: 0.3em;
+  display: flex;
+  flex-direction: row;       /* 横並び */
+  align-items: center;       /* 高さ中央揃え */
+  gap: 0.2em;                /* 適度に隙間 */
 }
 
-body[style*="writing-mode: vertical-rl"] .input-row input,
-body[style*="writing-mode: vertical-rl"] .input-row button {
-  width: auto;                 /* 横幅を制限せず自然に */
-  height: auto;                /* 高さを自動調整 */
-  padding: 0.3em 0.5em;        /* 少し詰める */
+/* 入力欄 */
+body[style*="writing-mode: vertical-rl"] .input-row input {
+  font-family: "ヒラギノ明朝 Pro","Hiragino Mincho Pro","ＭＳ 明朝","MS Mincho",serif;
   font-size: 1rem;
+  line-height: 1.2;          /* 縦書き用に少し詰める */
+  padding: 0.4em 0.6em;      /* ボタンに合わせる */
+  height: auto;
+  box-sizing: content-box;    /* paddingを加えても高さに影響しない */
 }
+
+/* ボタン */
+body[style*="writing-mode: vertical-rl"] .input-row button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: "ヒラギノ明朝 Pro","Hiragino Mincho Pro","ＭＳ 明朝","MS Mincho",serif;
+  font-size: 1rem;
+  line-height: 1.2;
+  padding: 0.4em 0.6em;
+  white-space: nowrap;
+  height: auto;
+}
+
 /* ==========================================
    スマホレスポンシブ
 ========================================== */
