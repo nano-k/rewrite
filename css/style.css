@@ -54,6 +54,9 @@ main {
   padding: 80px 20px;
   border-bottom: 1px solid #ddd;
   min-height: 80vh;
+  display: flex;
+  justify-content: center; /* 横方向に中央 */
+  align-items: flex-start; /* 上から配置（中央の場合は center） */
 }
 
 .section-title {
