@@ -262,3 +262,17 @@ document.addEventListener("DOMContentLoaded", () => {
     window.open(tweetURL, "_blank");
   });
 });
+
+
+/* ==========================================
+   endpage
+========================================== */
+window.addEventListener('load', () => {
+  if (document.body.classList.contains('end-page')) {
+    const tateWrap = document.querySelector('.tate-wrap');
+    if (tateWrap) {
+      tateWrap.scrollLeft = tateWrap.scrollWidth; // 右端に固定
+    }
+  }
+});
+
