@@ -73,13 +73,13 @@ function checkSmall(id, nextPage) {
   const result = document.getElementById(id + "result");
 
   const answers = {
-    q2: "こ",
-    q3: "た",
-    q4: "え",
-    q5: "は",
-    q6: "あ",
-    q7: "ん",
-    q8: "さー"
+    q2: "ぶん",
+    q3: "よみ",
+    q4: "ごじ",
+    q5: "よはく",
+    q6: "るび",
+    q7: "きごう",
+    q8: "校閲者"
   };
 
   if (input === answers[id]) {
