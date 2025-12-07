@@ -155,6 +155,11 @@ body[style*="writing-mode: vertical-rl"] .next-btn {
 ========================================== */
 @media screen and (max-width: 480px) {
 
+  .tate-wrap {
+    display: block;
+    justify-content: flex-start;
+  }
+
   header {
     height: 50px;
     line-height: 50px;
@@ -163,7 +168,7 @@ body[style*="writing-mode: vertical-rl"] .next-btn {
   }
 
   body[style*="writing-mode: vertical-rl"] header {
-    line-height: 50px; /* 高さに合わせて調整 */
+    line-height: 50px;
   }
 
   .container {
@@ -194,7 +199,7 @@ body[style*="writing-mode: vertical-rl"] .next-btn {
   }
 
   button {
-    width: 100%; /* 横書きの小ボタンはスマホで幅いっぱいに */
+    width: 100%;
     padding: 10px;
     font-size: 1rem;
     margin-bottom: 14px;
@@ -222,6 +227,7 @@ body[style*="writing-mode: vertical-rl"] .next-btn {
   }
 
   body[style*="writing-mode: vertical-rl"] .next-btn {
-    width: auto; /* 縦書きでは幅は固定せず */
+    width: auto;
   }
+
 }
