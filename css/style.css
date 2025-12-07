@@ -68,6 +68,30 @@ input {
   max-width: 300px;
 }
 
+.input-row {
+  display: flex;
+  align-items: stretch;  /* 高さを揃える */
+  gap: 4px;              /* 入力欄とボタンの間隔 */
+}
+
+.input-row input,
+.input-row button {
+  font-size: 1rem;
+  padding: 0.5em 0.8em;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+.input-row input {
+  flex: 1;               /* 入力欄を横に伸ばす */
+}
+
+.input-row button {
+  flex: none;            /* ボタンは固定幅 */
+  white-space: nowrap;   /* 文字折り返し防止 */
+}
+
+
 button, .next-btn {
   padding: 10px 20px;
   margin-top: 10px;
