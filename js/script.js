@@ -150,16 +150,17 @@ if (header) {
     const page12 = document.querySelector('.page[data-page="12"]');
     const result = document.getElementById("big2result");
 
-    // とりあえず条件なしで反応
     header.textContent = "校閲世界";
     result.textContent = "正しく修正された。";
 
-    // ページのロック解除＆表示
+    // page11の解除
     if (page11) unlockPage(11);
-    if (page12) unlockPage(12);
 
-    // 大謎2にスクロール
-    showPage(11);
+    // page12の解除＆スクロール
+    if (page12) {
+      unlockPage(12);
+      showPage(12);
+    }
   });
 }
 
