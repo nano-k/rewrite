@@ -4,7 +4,11 @@
 const pageNum = document.getElementById("pageNum");
 const pages = document.querySelectorAll(".page");
 
-// ロックされたページを非表示
+/* 進捗合計（%） */
+let progressTotal = 0;
+const progressPercent = document.getElementById("progressPercent");
+
+/* ロックされたページを非表示 */
 pages.forEach(p => {
   if (p.dataset.lock === "true") {
     p.style.display = "none";
@@ -30,6 +34,26 @@ if (pageNum) {
 }
 
 /* ==========================================
+   世界修正率の更新
+========================================== */
+function updateProgress(pageElement) {
+  const add = Number(pageElement.dataset.progress || 0);
+
+  // 初めて解除した時だけ進捗追加したいので "counted" 属性で管理
+  if (!pageElement.dataset.counted) {
+    progressTotal += add;
+    pageElement.dataset.counted = "true";
+  }
+
+  // 最大100%で止める（念のため）
+  if (progressTotal > 100) progressTotal = 100;
+
+  if (progressPercent) {
+    progressPercent.textContent = progressTotal + "%";
+  }
+}
+
+/* ==========================================
    ページロック解除
 ========================================== */
 function unlockPage(pageNumber) {
@@ -37,7 +61,10 @@ function unlockPage(pageNumber) {
   if (page) {
     page.dataset.lock = "false";
     page.classList.remove("locked");
-    page.style.display = "block"; // ← 表示
+    page.style.display = "block";
+
+    // ★解除したら進捗を加算
+    updateProgress(page);
   }
 }
 
@@ -57,7 +84,6 @@ function checkQ1() {
 
   if (ans === "かき" || ans === "カキ") {
     result.textContent = "正解！";
-
     unlockPage(3);
     showPage(3);
   } else {
@@ -134,7 +160,6 @@ if (header) {
 ========================================== */
 let disablePullRefresh = false;
 
-// 大謎3クリア時
 function checkBig3() {
   const t = document.getElementById("big3a").value.trim();
   const result = document.getElementById("big3result");
@@ -147,7 +172,6 @@ function checkBig3() {
     document.getElementById("toClear").classList.remove("hidden");
     showPage(12, 400);
 
-    // ★スマホ版のみプル・トゥ・リフレッシュ無効化
     if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
       disablePullRefresh = true;
     }
@@ -156,7 +180,7 @@ function checkBig3() {
   }
 }
 
-// プル・トゥ・リフレッシュ防止
+/* プル・トゥ・リフレッシュ無効化 */
 let touchStartY = 0;
 document.addEventListener("touchstart", (e) => {
   if (disablePullRefresh) {
@@ -169,47 +193,42 @@ document.addEventListener("touchmove", (e) => {
     const touchY = e.touches[0].clientY;
     const scrollTop = document.scrollingElement.scrollTop || document.body.scrollTop;
 
-    // ページ先頭で下方向スクロールの時のみ無効化
     if (scrollTop === 0 && touchY > touchStartY) {
       e.preventDefault();
     }
   }
 }, { passive: false });
 
-
 /* ==========================================
-   その他
+   Enterキーで謎を送信
 ========================================== */
-/* ===== Enterキーで送信できるようにする ===== */
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     const active = document.activeElement;
 
     if (active && active.tagName === "INPUT") {
-      e.preventDefault(); // フォームの変なリロード防止
+      e.preventDefault();
 
       const id = active.id;
 
-      // 小謎1専用
       if (id === "answer1") { checkQ1(); return; }
 
-      // 小謎2〜8
       if (["q2","q3","q4","q5","q6","q7","q8"].includes(id)) {
         const nextPageMap = { q2:4, q3:5, q4:6, q5:7, q6:8, q7:9, q8:10 };
         checkSmall(id,nextPageMap[id]);
         return;
       }
 
-      // 大謎1
       if (["big1a","big1b","big1c"].includes(id)) { checkBig1(); return; }
 
-      // 大謎3
       if (id === "big3a") { checkBig3(); return; }
     }
   }
 });
 
-/* ===== X投稿ボタン ===== */
+/* ==========================================
+   X投稿ボタン
+========================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const tweetBtn = document.getElementById("tweetBtn");
   if (!tweetBtn) return;
