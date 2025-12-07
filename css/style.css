@@ -70,7 +70,7 @@ input {
 
 .input-row {
   display: flex;
-  align-items: stretch;  /* 高さを揃える */
+  align-items: center;  /* 高さを揃える */
   gap: 4px;              /* 入力欄とボタンの間隔 */
 }
 
