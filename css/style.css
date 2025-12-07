@@ -109,18 +109,12 @@ footer {
 .tate {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-
   font-size: 1.1rem;
-
-  /* 行間：文字縦積みの間隔 */
   line-height: 2.2;
-
-  /* 30文字 × 行間2.2 = 折り返し位置 */
   height: calc(1em * 30 * 2.2);
-
-  /* その他の設定 */
   margin: 10px auto 0 auto;
   padding: 0;
+  max-width: none;
   width: auto;
   overflow-wrap: break-word;
 }
