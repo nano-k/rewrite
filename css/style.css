@@ -211,6 +211,20 @@ body[style*="writing-mode: vertical-rl"] .next-btn {
   width: auto; /* 横幅100%ではなくコンテンツ幅に */
 }
 
+/* 縦書きページ専用 */
+body[style*="writing-mode: vertical-rl"] .input-row {
+  flex-direction: column;      /* 横並びではなく縦並びに */
+  align-items: flex-start;     /* 左寄せ（縦書きだと右寄せでも可） */
+  gap: 0.3em;
+}
+
+body[style*="writing-mode: vertical-rl"] .input-row input,
+body[style*="writing-mode: vertical-rl"] .input-row button {
+  width: auto;                 /* 横幅を制限せず自然に */
+  height: auto;                /* 高さを自動調整 */
+  padding: 0.3em 0.5em;        /* 少し詰める */
+  font-size: 1rem;
+}
 /* ==========================================
    スマホレスポンシブ
 ========================================== */
