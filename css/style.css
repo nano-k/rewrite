@@ -85,6 +85,20 @@ button, .next-btn {
   font-weight: bold;
 }
 
+.puzzle-box {
+  border: 2px solid #000;       /* 枠線 */
+  padding: 10px;
+  margin: 20px 0;
+  display: inline-block;
+  max-width: 90%;               /* スマホ対応 */
+  box-sizing: border-box;
+  background-color: #fefefe;    /* 背景色 optional */
+}
+
+.tate .puzzle-box {
+  margin: 1em 0;
+}
+
 .hidden {
   display: none;
 }
@@ -128,6 +142,7 @@ footer {
   font-size: 1.4rem;
   font-weight: bold;
 }
+
 
 /* 奥付の上に線を引き、文字をセンターにする */
 section.page h3 {
