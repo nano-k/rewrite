@@ -150,22 +150,19 @@ if (header) {
     const page12 = document.querySelector('.page[data-page="12"]');
     const result = document.getElementById("big2result");
 
-    // すでに解除済みなら何もしない
     if (!page11 || page11.dataset.lock === "false") return;
 
-    // ヘッダー修正
     header.textContent = "校閲世界";
     result.textContent = "正しく修正された。";
 
-    // unlockPage() で統一的に解除＆進捗反映
+    // unlockPage() で解除＆進捗加算
     unlockPage(11);
-
     if (page12) unlockPage(12);
 
-    // page12へスクロール
     showPage(12);
   });
 }
+
 
 /* ==========================================
    大謎3
