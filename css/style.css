@@ -114,10 +114,8 @@ footer {
   padding: 0;
   width: max-content;
   font-size: 1.1rem;
-  /* ★ 1行30字で折り返しさせる設定 */
-  height: calc(1em * 30); /* 30文字の高さを行幅にする */
-  line-height: 1em;
-  /* 必須：折り返し有効化 */
+  line-height: 1.3;
+  height: calc(1em * 30 * 1.3);
   overflow-wrap: break-word;
 }
 
