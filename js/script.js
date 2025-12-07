@@ -147,25 +147,27 @@ const header = document.getElementById("headerTitle");
 if (header) {
   header.addEventListener("click", () => {
     const page11 = document.querySelector('.page[data-page="11"]');
+    const result = document.getElementById("big2result");
 
     // すでに解除済みなら何もしない
     if (page11.dataset.lock === "false") return;
 
     // ヘッダー修正
     header.textContent = "校閲世界";
-    document.getElementById("big2result").textContent =
-      "正しく修正された。";
+    result.textContent = "正しく修正された。";
 
     // ロック解除
     page11.dataset.lock = "false";
 
-    // 進捗反映（data-progress="4"）
-    updateProgress(11);
+    // 進捗反映
+    updateProgress(page11);
 
-    // 次ページへ（page12）
-    showPage(12); // 
+    // 次ページも解除して表示
+    unlockPage(12);
+    showPage(12);
   });
 }
+
 
 
 
