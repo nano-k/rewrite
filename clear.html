@@ -42,5 +42,14 @@
     Thank you for playing!</footer>
 </div>
 <script src="js/script.js"></script>
+<script>
+window.addEventListener("load", function () {
+  if (window.innerWidth <= 480) {
+    const area = document.querySelector(".scroll-container");
+    if (area) area.scrollLeft = 0;
+  }
+});
+</script>
+  
 </body>
 </html>
