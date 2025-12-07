@@ -211,6 +211,26 @@ body[style*="writing-mode: vertical-rl"] .next-btn {
     overflow-x: auto;           /* 横スクロール可能 */
   }
 
+  .input-row {
+    display: flex !important;       /* flexを強制 */
+    flex-direction: row !important; /* 横並び */
+    align-items: center !important; /* 高さ中央揃え */
+    gap: 4px !important;
+  }
+
+  .input-row input,
+  .input-row button {
+    width: auto !important;         /* 100% 幅は解除 */
+    flex: none !important;          /* 入力欄も固定 or flex指定 */
+  }
+
+  .input-row input {
+    flex: 1;                        /* 入力欄を伸ばす */
+  }
+
+  .input-row button {
+    flex: none;
+  }
 
   header {
     height: 50px;
