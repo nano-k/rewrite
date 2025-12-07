@@ -76,6 +76,7 @@ input {
 
 .input-row input,
 .input-row button {
+  font-family: "ヒラギノ明朝 Pro","Hiragino Mincho Pro", "ＭＳ 明朝", "MS Mincho", serif;
   font-size: 1rem;
   line-height: 1.5;
   padding: 0.5em 0.8em;
