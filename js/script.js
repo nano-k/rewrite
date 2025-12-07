@@ -142,15 +142,18 @@ function checkBig1() {
    大謎2（ヘッダークリックで突破）
 ========================================== */
 
-const header = document.getElementById("headerTitle");
+const targetChar = document.querySelector("#headerTitle .target-char");
 
-if (header) {
-  header.addEventListener("click", () => {
+if (targetChar) {
+  targetChar.addEventListener("click", () => {
     const page11 = document.querySelector('.page[data-page="11"]');
     const page12 = document.querySelector('.page[data-page="12"]');
     const result = document.getElementById("big2result");
 
-    header.textContent = "校閲世界";
+    // クリック後に文字を変える
+    targetChar.textContent = "校";
+
+    // 結果表示
     result.textContent = "正しく修正された。";
 
     // page11の解除
