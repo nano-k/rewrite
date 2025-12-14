@@ -125,17 +125,30 @@ function checkRewriteQ2() {
   const result = document.getElementById("q2RewriteResult");
   const inputArea = document.getElementById("q2InputArea");
 
+  // どちらも未選択
+  if (!before && !after) {
+    result.textContent = "";
+    inputArea.classList.remove("show");
+    return;
+  }
+
+  // 片方だけ選択（まだ途中）
+  if (!before || !after) {
+    result.textContent = "";
+    inputArea.classList.remove("show");
+    return;
+  }
+
+  // 両方選択 → ここで初めて正誤判定
   if (before === "red" && after === "blue") {
     result.textContent = "タブレットに解答が入力できるようになった。";
-    inputArea.style.display = "block";
-  } else if (before || after) {
-    result.textContent = "何かが違うようだ。";
-    inputArea.style.display = "none";
+    inputArea.classList.add("show");
   } else {
-    result.textContent = "";
-    inputArea.style.display = "none";
+    result.textContent = "何かが違うようだ。";
+    inputArea.classList.remove("show");
   }
 }
+
 
 /* ==========================================
    大謎1
