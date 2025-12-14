@@ -126,10 +126,10 @@ function checkRewriteQ2() {
   const inputArea = document.getElementById("q2InputArea");
 
   if (before === "red" && after === "blue") {
-    result.textContent = "正しく校閲された。";
+    result.textContent = "タブレットに解答が入力できるようになった。";
     inputArea.style.display = "block";
   } else if (before || after) {
-    result.textContent = "修正が不適切だ。";
+    result.textContent = "何かが違うようだ。";
     inputArea.style.display = "none";
   } else {
     result.textContent = "";
