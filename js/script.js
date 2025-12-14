@@ -99,7 +99,7 @@ function checkSmall(id, nextPage) {
   const result = document.getElementById(id + "result");
 
   const answers = {
-    q2: "ぶん",
+    q2: ["ぶん", "ブン", "BUN", "bun"],
     q3: "よみ",
     q4: "ごじ",
     q5: "よはく",
@@ -108,14 +108,21 @@ function checkSmall(id, nextPage) {
     q8: "校閲者"
   };
 
-  if (input === answers[id]) {
-    result.textContent = "正解！";
+  const correct = answers[id];
+
+  if (
+    Array.isArray(correct)
+      ? correct.includes(input)
+      : input === correct
+  ) {
+    result.textContent = "勢い良く扉が開いた。";
     unlockPage(nextPage);
     showPage(nextPage);
   } else {
-    result.textContent = "違います。";
+    result.textContent = "何かが違うようだ。";
   }
 }
+
 
 
 
