@@ -117,6 +117,26 @@ function checkSmall(id, nextPage) {
   }
 }
 
+
+function checkRewriteQ2() {
+  const before = document.getElementById("q2Before").value;
+  const after = document.getElementById("q2After").value;
+
+  const result = document.getElementById("q2RewriteResult");
+  const inputArea = document.getElementById("q2InputArea");
+
+  if (before === "red" && after === "blue") {
+    result.textContent = "正しく校閲された。";
+    inputArea.style.display = "block";
+  } else if (before || after) {
+    result.textContent = "修正が不適切だ。";
+    inputArea.style.display = "none";
+  } else {
+    result.textContent = "";
+    inputArea.style.display = "none";
+  }
+}
+
 /* ==========================================
    大謎1
 ========================================== */
