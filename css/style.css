@@ -163,6 +163,60 @@ footer {
   margin-right: 20px;
 }
 
+/* ---- 中央のタイトル演出 ---- */
+#censorTitleWrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  z-index: 999;
+  transition: opacity 0.35s ease;
+}
+
+#censorTitle {
+  font-size: 48px;
+  letter-spacing: 0.15em;
+  display: flex;
+  gap: 0.1em;
+  color: #000;
+}
+
+#charKen {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+/* ---- モザイクタイル ---- */
+.mosaic-tile {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #000;
+  opacity: 1;
+  animation: tileFade 0.28s forwards;
+}
+
+@keyframes tileFade {
+  to {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+/* ---- 本文フェードイン ---- */
+.fade-target {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.show-content {
+  opacity: 1;
+}
+
 /* ==========================================
    あとがき（縦書き） 
 ========================================== */
