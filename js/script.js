@@ -118,34 +118,35 @@ function checkSmall(id, nextPage) {
 }
 
 
+
 function checkRewriteQ2() {
   const before = document.getElementById("q2Before").value;
-  const after = document.getElementById("q2After").value;
+  const after  = document.getElementById("q2After").value;
 
   const result = document.getElementById("q2RewriteResult");
   const inputArea = document.getElementById("q2InputArea");
 
-  // どちらも未選択
+  // 両方未選択
   if (!before && !after) {
     result.textContent = "";
-    inputArea.classList.remove("show");
+    inputArea.style.display = "none";
     return;
   }
 
-  // 片方だけ選択（まだ途中）
+  // 片方だけ選択（まだ途中なので誤り扱いしない）
   if (!before || !after) {
     result.textContent = "";
-    inputArea.classList.remove("show");
+    inputArea.style.display = "none";
     return;
   }
 
-  // 両方選択 → ここで初めて正誤判定
+  // 両方選択 → 正誤判定
   if (before === "red" && after === "blue") {
     result.textContent = "タブレットに解答が入力できるようになった。";
-    inputArea.classList.add("show");
+    inputArea.style.display = "block";
   } else {
     result.textContent = "何かが違うようだ。";
-    inputArea.classList.remove("show");
+    inputArea.style.display = "none";
   }
 }
 
