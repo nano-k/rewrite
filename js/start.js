@@ -9,7 +9,8 @@ function createMosaic() {
   const tileSize = 14;
   const cols = Math.ceil(rect.width / tileSize);
   const rows = Math.ceil(rect.height / tileSize);
-  const offsetY = 14;
+  const offsetY = 15;
+  const offsetX = -6;
 
   for (let y = 0; y < rows; y++) {
     for (let x = 0; x < cols; x++) {
