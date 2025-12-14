@@ -3,34 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>検閲世界</title>
-  <link rel="stylesheet" href="css/style.css">
+ <title>検閲世界</title>
+
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>検閲世界</header>
-<div class="container">
-  
-<main>
-  <section class="page" data-page="1">
-    <h2 class="section-title">イントロダクション</h2>
-    <p>
-      あなたが目を覚ましたのは、文字だらけの奇妙な世界。<br>
-      文字にはどこか違和感があることにあなたは気付く。<br><br>
-      あなたに与えられた能力は文字を修正する力。<br>
-      文字を正しく修正して謎を解き、この歪んだ世界から帰還せよ。
-    </p>
+<!-- ======= 検の文字モザイク演出 ======= -->
+<div id="censorTitleWrapper">
+  <div id="censorTitle">
+    <span id="charKen">検</span>
+    <span>閲世界</span>
+  </div>
+</div>
 
-    <div class="next-btn-wrap">
-      <a class="next-btn" href="world.html">進む</a>
-    </div>
-  </section>
-</main>
+<!-- ======= 本文（header + container 同時フェード） ======= -->
+<header class="fade-target">検閲世界</header>
 
-<footer>
-  Page <span id="pageNum">1</span>
-</footer>
-     </div>
-<script src="js/script.js"></script>
+<div class="container fade-target">
+  <main>
+    <section class="page" data-page="1">
+      <h2 class="section-title">イントロダクション</h2>
+      <p>
+        あなたが目を覚ましたのは、文字だらけの奇妙な世界。<br>
+        文字にはどこか違和感があることにあなたは気付く。<br><br>
+        あなたに与えられた能力は文字を修正する力。<br>
+        文字を正しく修正して謎を解き、この歪んだ世界から帰還せよ。
+      </p>
+
+      <div class="next-btn-wrap">
+        <a class="next-btn" href="world.html">進む</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Page <span id="pageNum">1</span>
+  </footer>
+</div>
+
+<script src="js/start.js"></script>
 </body>
 </html>
