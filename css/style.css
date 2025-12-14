@@ -190,6 +190,15 @@ footer {
   height: 1em;
 }
 
+/* サブタイトル */
+.title-sub {
+  margin-top: 10px;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  color: #555;
+  font-family: "Times New Roman", serif;
+}
+
 /* ---- モザイクタイル ---- */
 .mosaic-tile {
   position: absolute;
