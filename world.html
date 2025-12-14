@@ -89,9 +89,29 @@
 後ろは黒い壁。中央に数字の1が白抜きで書かれている。右手側には青い壁、中央に白抜きで数字の3、正面には緑の壁、中央に白抜きで数字の5が書かれている。
     </p>
 
+<p class="rewrite-line">
+  <select id="q2Before" onchange="checkRewriteQ2()">
+    <option value="">色名</option>
+    <option value="red">赤</option>
+    <option value="black">黒</option>
+    <option value="green">緑</option>
+  </select>
+  を
+  <select id="q2After" onchange="checkRewriteQ2()">
+    <option value="">色名</option>
+    <option value="blue">青</option>
+    <option value="white">白</option>
+  </select>
+  に修正する
+</p>
+
+<p id="q2RewriteResult"></p>
+
+    <div id="q2InputArea" style="display:none;">
     <input id="q2" placeholder="解答">
     <button onclick="checkSmall('q2', 4)">送信</button>
     <p id="q2result" class="result"></p>
+      </div>
   </section>
 
   <!-- 小謎3（page4） -->
