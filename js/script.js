@@ -239,10 +239,10 @@ function normalizeText(str) {
 ------------------------------ */
 function checkBig3() {
   const yokoInput = normalizeText(
-    document.getElementById("big3a_yoko").value
+    document.getElementById("big3a_1").value
   );
   const tateInput = normalizeText(
-    document.getElementById("big3a_tate").value
+    document.getElementById("big3a_2").value
   );
 
   const result = document.getElementById("big3result");
@@ -258,7 +258,7 @@ function checkBig3() {
     document.body.style.writingMode = "vertical-rl";
     document.body.style.textOrientation = "mixed";
 
-    result.textContent = "世界が縦書きに戻った。";
+    result.textContent = "世界が縦書きに書き換えられた。";
 
     unlockPage(12);
     document.getElementById("toClear").classList.remove("hidden");
@@ -268,7 +268,7 @@ function checkBig3() {
       disablePullRefresh = true;
     }
   } else {
-    result.textContent = "指示が不完全です。";
+    result.textContent = "何かが違うようだ。";
   }
 }
 
@@ -319,9 +319,12 @@ document.addEventListener("keydown", (e) => {
         return;
       }
 
-      if (["big1a","big1b","big1c"].includes(id)) { checkBig1(); return; }
+      if (["big1a","big1b"].includes(id)) { checkBig1(); return; }
 
-      if (id === "big3a") { checkBig3(); return; }
+     if (["big3a_1", "big3a_2"].includes(id)) {
+    checkBig3();
+    return;
+  }
     }
   }
 });
