@@ -347,6 +347,10 @@ body[style*="writing-mode: vertical-rl"] .input-row button {
     flex: none;
   }
 
+  .mini-input {
+    min-width: 4em;       /* タップしやすく */
+    flex-basis: 4em;
+  }
 
    
   header {
