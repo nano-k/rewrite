@@ -139,7 +139,7 @@ button, .next-btn {
 /* 縦書き専用の調整（tateクラス内） */
 .tate .puzzle-box {
   writing-mode: vertical-rl;     /* 縦書き */
-  text-orientation: upright;
+  text-orientation: mixed;
   padding: 1em;
   margin: 1em 0;
 }
