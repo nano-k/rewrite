@@ -210,18 +210,56 @@ if (targetChar) {
 
 
 /* ==========================================
-   大謎3
+   大謎3（完全版）
 ========================================== */
+
 let disablePullRefresh = false;
 
+/* ------------------------------
+   正解ワード定義
+------------------------------ */
+const YOKO_WORDS = ["横", "よこ", "ヨコ", "横書き"];
+const TATE_WORDS = ["縦", "たて", "タテ", "縦書き"];
+
+/* ------------------------------
+   入力正規化
+   ・前後空白削除
+   ・カタカナ → ひらがな
+------------------------------ */
+function normalizeText(str) {
+  return str
+    .trim()
+    .replace(/[ァ-ン]/g, ch =>
+      String.fromCharCode(ch.charCodeAt(0) - 0x60)
+    );
+}
+
+/* ------------------------------
+   大謎3 判定
+------------------------------ */
 function checkBig3() {
-  const t = document.getElementById("big3a").value.trim();
+  const yokoInput = normalizeText(
+    document.getElementById("big3a_yoko").value
+  );
+  const tateInput = normalizeText(
+    document.getElementById("big3a_tate").value
+  );
+
   const result = document.getElementById("big3result");
 
-  if (t.includes("横") && t.includes("縦")) {
+  const isYoko = YOKO_WORDS.some(word =>
+    normalizeText(word) === yokoInput
+  );
+  const isTate = TATE_WORDS.some(word =>
+    normalizeText(word) === tateInput
+  );
+
+  if (isYoko && isTate) {
     document.body.style.writingMode = "vertical-rl";
     document.body.style.textOrientation = "mixed";
+
     result.textContent = "世界が縦書きに戻った。";
+
     unlockPage(12);
     document.getElementById("toClear").classList.remove("hidden");
     showPage(12, 400);
@@ -234,24 +272,32 @@ function checkBig3() {
   }
 }
 
-/* プル・トゥ・リフレッシュ無効化 */
+/* ------------------------------
+   プル・トゥ・リフレッシュ無効化
+------------------------------ */
 let touchStartY = 0;
+
 document.addEventListener("touchstart", (e) => {
   if (disablePullRefresh) {
     touchStartY = e.touches[0].clientY;
   }
 });
 
-document.addEventListener("touchmove", (e) => {
-  if (disablePullRefresh) {
-    const touchY = e.touches[0].clientY;
-    const scrollTop = document.scrollingElement.scrollTop || document.body.scrollTop;
+document.addEventListener(
+  "touchmove",
+  (e) => {
+    if (disablePullRefresh) {
+      const touchY = e.touches[0].clientY;
+      const scrollTop =
+        document.scrollingElement.scrollTop || document.body.scrollTop;
 
-    if (scrollTop === 0 && touchY > touchStartY) {
-      e.preventDefault();
+      if (scrollTop === 0 && touchY > touchStartY) {
+        e.preventDefault();
+      }
     }
-  }
-}, { passive: false });
+  },
+  { passive: false }
+);
 
 /* ==========================================
    Enterキーで謎を送信
