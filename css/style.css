@@ -347,9 +347,22 @@ body[style*="writing-mode: vertical-rl"] .input-row button {
     flex: none;
   }
 
-  .mini-input {
-    min-width: 4em;       /* タップしやすく */
-    flex-basis: 4em;
+ /* 大謎3だけ折り返し許可 */
+  .input-row.big3-row {
+    flex-wrap: wrap !important;
+  }
+
+  /* 大謎3の入力欄だけ柔軟に */
+  .input-row.big3-row .mini-input {
+    width: auto !important;
+    flex: 0 1 4em !important;
+    min-width: 4em;
+  }
+
+  /* ボタンは分断しない */
+  .input-row.big3-row button {
+    flex: none !important;
+    white-space: nowrap;
   }
 
    
