@@ -212,9 +212,17 @@
       何をすれば修正が完了するだろうか。
     </p>
 
-    <input id="big3a" placeholder="校閲指示">
-    <button onclick="checkBig3()">送信</button>
-    <p id="big3result" class="result"></p>
+<div class="input-row">
+    <p>
+  「<input type="text" id="big3a_yoko" class="mini-input">」
+  を
+  「<input type="text" id="big3a_tate" class="mini-input">」
+  に
+</p>
+
+<button onclick="checkBig3()">する。</button>
+<p id="big3result"></p>
+</div>
 
     <div id="toClear" class="hidden">
       <a class="next-btn" href="end.html">進む</a>
