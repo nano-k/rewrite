@@ -149,7 +149,7 @@ function checkRewriteQ2() {
 
   // 両方選択 → 正誤判定
   if (before === "red" && after === "blue") {
-    result.textContent = "修正箇所をタップすると、赤が青に変化し、タブレットに解答が入力できるようになった。";
+    result.textContent = "　修正箇所をタップすると、赤が青に変化し、タブレットに解答が入力できるようになった。";
     inputArea.style.display = "block";
   } else {
     result.textContent = "何かが違うようだ。";
