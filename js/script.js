@@ -220,7 +220,7 @@ function checkBig3() {
 
   if (t.includes("横") && t.includes("縦")) {
     document.body.style.writingMode = "vertical-rl";
-    document.body.style.textOrientation = "upright";
+    document.body.style.textOrientation = "mixed";
     result.textContent = "世界が縦書きに戻った。";
     unlockPage(12);
     document.getElementById("toClear").classList.remove("hidden");
