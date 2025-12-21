@@ -189,9 +189,9 @@ function checkRewriteQ3() {
     d === "shime";
 
   if (isCorrect) {
-    result.textContent = "開いている扉を閉めると、扉に左の矢印を発見した。";
+    result.textContent = "　開いている扉を閉めると、扉に左の矢印を発見した。ひもの隣の空白をタップすると左の矢印が表示された。";
     inputArea.style.display = "block";
-
+　
     // 必要ならここで解放
     // unlockPage(○○);
   } else {
