@@ -122,16 +122,16 @@
   <!-- 小謎3（page4） -->
   <section class="page" data-page="4" data-progress="7" data-lock="true">
     <h2 class="section-title">３</h2>
-    <p>　黒=BLACKの1文字目は「B」、赤=REDの3文字目は「D」、緑=GREENの5文字目は「N」。
+    <p>　黒=BLACKの１文字目は「B」、赤=REDの３文字目は「D」、緑=GREENの５文字目は「N」。
       それぞれ拾うと『BDN』となるが、これでは答えにならない。
       そこで壁の色と謎が対応関係にあること気付くと、赤を青に変えれば良いと導ける。
-      青=BLUEの3文字目の「U」を拾うと、答えは『BUN』になる。ぶん、文、分、何を指しているのかはわからないが、扉が開いたということは正解のようだ。<br><br> 
+      青=BLUEの３文字目の「U」を拾うと、答えは『BUN』になる。ぶん、文、分、何を指しているのかはわからないが、扉が開いたということは正解のようだ。<br><br> 
 ＊<br> <br>
 
 　次の部屋は最初の部屋と同じく白い、真四角の部屋だった。入った扉を開けたまま、部屋の中央まで来ると、タブレットに新たな謎が表示される。</p>
 　
       <div class="puzzle-box">
- <p><i class="fas fa-arrow-up"></i>にきし⇔さかな<br>↓かさた⇔ちしき<br>ひも⇔？<br>→へぬ⇔ふね</p>
+ <p><i class="fas fa-arrow-up"></i>にきし⇔さかな<br><i class="fas fa-arrow-down"></i>かさた⇔ちしき<br>ひも⇔？<br><i class="fas fa-arrow-right"></i>へぬ⇔ふね</p>
 </div> 
 
      <p>
@@ -177,9 +177,10 @@
     <p id="q3RewriteResult"></p>
 
     <div id="q3InputArea" style="display:none;"> 
-      <div class="puzzle-box">
- 　　 <p>↑にきし⇔さかな<br>↓かさた⇔ちしき<br>←ひも⇔？<br>→へぬ⇔ふね</p>
-　　　</div> 
+         <div class="puzzle-box">
+ <p>
+   <i class="fas fa-arrow-up"></i>にきし⇔さかな<br><i class="fas fa-arrow-down"></i>かさた⇔ちしき<br><i class="fas fa-arrow-left"></i>ひも⇔？<br><i class="fas fa-arrow-right"></i>へぬ⇔ふね</p>
+</div> 
       
     <input id="q3" placeholder="解答">
     <button onclick="checkSmall('q3', 5)">送信</button>
