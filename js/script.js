@@ -164,8 +164,8 @@ function checkRewriteQ3() {
   const c = document.getElementById("q3_3").value;
   const d = document.getElementById("q3_4").value;
 
-  const result = document.getElementById("q3result");   // 表示用
-  const inputArea = document.getElementById("q3Next"); // 次に進むUI等
+  const result = document.getElementById("q3RewriteResult");   // 表示用
+  const inputArea = document.getElementById("q3InputArea"); // 次に進むUI等
 
   // 全部未選択
   if (!a && !b && !c && !d) {
