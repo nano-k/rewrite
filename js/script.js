@@ -158,6 +158,49 @@ function checkRewriteQ2() {
 }
 
 
+function checkRewriteQ3() {
+  const a = document.getElementById("q3_1").value;
+  const b = document.getElementById("q3_2").value;
+  const c = document.getElementById("q3_3").value;
+  const d = document.getElementById("q3_4").value;
+
+  const result = document.getElementById("q3result");   // 表示用
+  const inputArea = document.getElementById("q3Next"); // 次に進むUI等
+
+  // 全部未選択
+  if (!a && !b && !c && !d) {
+    result.textContent = "";
+    inputArea.style.display = "none";
+    return;
+  }
+
+  // 途中（1つでも未選択）
+  if (!a || !b || !c || !d) {
+    result.textContent = "";
+    inputArea.style.display = "none";
+    return;
+  }
+
+  // 全部選択 → 正誤判定
+  const isCorrect =
+    a === "ai" &&
+    b === "teiru" &&
+    c === "tobira" &&
+    d === "shime";
+
+  if (isCorrect) {
+    result.textContent = "開いている扉を閉めると、扉に左の矢印を発見した。";
+    inputArea.style.display = "block";
+
+    // 必要ならここで解放
+    // unlockPage(○○);
+  } else {
+    result.textContent = "何かが違うようだ。";
+    inputArea.style.display = "none";
+  }
+}
+
+
 /* ==========================================
    大謎1
 ========================================== */
