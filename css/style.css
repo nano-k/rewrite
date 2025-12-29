@@ -129,18 +129,18 @@ button, .next-btn {
 }
 
 .puzzle-box {
-  border: 2px solid #555;
-  padding: 12px;
-  margin: 20px auto;
-  max-width: 90%;
+  border: 2px solid #555;       /* □枠 */
+  padding: 10px;
+  margin: 20px 0;
+  display: flex;                 /* flexで中央揃え */
+  justify-content: center;       /* 横方向中央 */
+  align-items: center;           /* 縦方向中央 */
+  text-align: center;            /* テキスト中央 */
+  max-width: 90%;                /* スマホ対応 */
   box-sizing: border-box;
   background-color: #fefefe;
-  display: flex;
-  flex-direction: column; /* 縦並び */
-  align-items: center;
+  white-space: pre-wrap;         /* 改行を保持 */
 }
-
-
 
 
 /* 縦書き専用の調整（tateクラス内） */
