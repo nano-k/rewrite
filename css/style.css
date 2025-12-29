@@ -132,7 +132,6 @@ button, .next-btn {
   border: 2px solid #555;       /* □枠 */
   padding: 10px;
   margin: 20px 0;
-  display: flex;                 /* flexで中央揃え */
   justify-content: center;       /* 横方向中央 */
   align-items: center;           /* 縦方向中央 */
   text-align: center;            /* テキスト中央 */
