@@ -307,7 +307,16 @@ footer {
   padding: 4px 2px;
 }
 
-
+.num {
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 1px solid #000;
+  border-radius: 50%;
+  line-height: 1.4em;
+  text-align: center;
+  font-size: 0.9em;
+}
 
 /* スマホ対応：縮小 */
 @media (max-width: 480px) {
