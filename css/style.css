@@ -235,7 +235,94 @@ footer {
   opacity: 1;
 }
 
-/* ---- venn ---- */
+/* ===== ベン図専用パズルボックス ===== */
+
+.venn-box {
+  border: 2px solid #555;
+  padding: 16px;
+  margin: 24px auto;
+  max-width: 360px;
+  background: #fff;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* ベン図の基準サイズ */
+.venn-wrap {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+/* 円 */
+.circle {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  box-sizing: border-box;
+
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  padding-top: 42px;
+}
+
+/* 左右 */
+.circle.left {
+  left: 0;
+}
+
+.circle.right {
+  right: 0;
+}
+
+/* タイトル */
+.vtitle {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* 重なり */
+.overlap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 0 6px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.choices {
+  margin-top: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.choice {
+  border: 1px solid #000;
+  padding: 6px 0;
+  margin: 6px auto;
+  max-width: 220px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+
+/* スマホ対応：縮小 */
+@media (max-width: 480px) {
+  .venn-wrap {
+    transform: scale(0.85);
+  }
+}
 
 
 /* ==========================================
