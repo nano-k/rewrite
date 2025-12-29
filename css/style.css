@@ -134,6 +134,7 @@ button, .next-btn {
   margin: 20px 0;
   justify-content: center;       /* 横方向中央 */
   align-items: center;           /* 縦方向中央 */
+　display: flex;
   text-align: center;            /* テキスト中央 */
   max-width: 90%;                /* スマホ対応 */
   box-sizing: border-box;
@@ -237,8 +238,17 @@ footer {
 /* ===== ベン図専用パズルボックス ===== */
 
 .venn-box {
-　flex-direction: column;
-  overflow: hidden;
+  border: 2px solid #555;
+  padding: 10px;
+  margin: 20px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 90%;          /* ← puzzle-box と揃える */
+  box-sizing: border-box;
+  background-color: #fefefe;
 }
 
 /* ベン図の基準サイズ */
