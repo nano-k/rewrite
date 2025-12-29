@@ -249,7 +249,8 @@ footer {
   line-height: 2.0;
   margin: 10px auto 0 auto;
   padding: 0;
-  width: max-content;
+  height: 60vh;
+  overflow-x: auto;
 }
 
 .tate .section-title {
