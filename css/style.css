@@ -267,11 +267,17 @@ footer {
   border-radius: 50%;
   box-sizing: border-box;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* ← 縦中央 */
+  align-items: center;       /* ← 横中央 */
+
   text-align: center;
   font-size: 0.95rem;
   line-height: 1.8;
-  padding-top: 42px;
+  padding: 0;                /* padding-top を消す */
 }
+
 
 /* 左右 */
 .circle.left {
