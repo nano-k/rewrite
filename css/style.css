@@ -238,16 +238,6 @@ footer {
 /* ===== ベン図専用パズルボックス ===== */
 
 .venn-box {
-  border: 2px solid #555;
-  padding: 16px;
-  margin: 24px auto;
-  max-width: 90%;
-  background: #fff;
-  box-sizing: border-box;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 　flex-direction: column;
   overflow: hidden;
 }
