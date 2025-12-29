@@ -135,12 +135,9 @@ button, .next-btn {
   max-width: 90%;
   box-sizing: border-box;
   background-color: #fefefe;
-
   display: flex;
   flex-direction: column; /* 縦並び */
   align-items: center;
-
-  overflow: hidden;
 }
 
 
