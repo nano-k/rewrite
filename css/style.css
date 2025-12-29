@@ -298,7 +298,7 @@ footer {
 /* 重なり */
 .overlap {
   writing-mode: vertical-rl;
-  text-orientation: mixed;
+  text-orientation: upright;
 
   position: absolute;
   top: 50%;
@@ -309,13 +309,13 @@ footer {
 
 .num {
   display: inline-block;
-  width: 1.4em;
-  height: 1.4em;
+  width: 1.1em;
+  height: 1.1em;
   border: 1px solid #000;
   border-radius: 50%;
   line-height: 1.4em;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 
 /* スマホ対応：縮小 */
