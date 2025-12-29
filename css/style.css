@@ -137,7 +137,7 @@ button, .next-btn {
   justify-content: center;       /* 横方向中央 */
   align-items: center;           /* 縦方向中央 */
   text-align: center;            /* テキスト中央 */
-  max-width: 90%;                /* スマホ対応 */
+  max-width: 100%;                /* スマホ対応 */
   box-sizing: border-box;
   background-color: #fefefe;
   white-space: pre-wrap;         /* 改行を保持 */
