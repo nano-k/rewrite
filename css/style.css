@@ -250,7 +250,16 @@ footer {
   margin: 10px auto 0 auto;
   padding: 0;
   height: 60vh;
-  overflow-x: auto;
+}
+
+.tate2 {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 1.1rem;
+  line-height: 2.0;
+  margin: 10px auto 0 auto;
+  padding: 0;
+  width: max-content;
 }
 
 .tate .section-title {
