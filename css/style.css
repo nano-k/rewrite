@@ -297,14 +297,17 @@ footer {
 
 /* 重なり */
 .overlap {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   background: #fff;
-  padding: 2px 6px;
+  padding: 4px 2px;
   font-size: 0.95rem;
-  white-space: nowrap;
 }
 
 .choices {
