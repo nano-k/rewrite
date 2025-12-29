@@ -129,18 +129,22 @@ button, .next-btn {
 }
 
 .puzzle-box {
-  border: 2px solid #555;       /* □枠 */
-  padding: 10px;
-  margin: 20px 0;
-  display: flex;                 /* flexで中央揃え */
-  justify-content: center;       /* 横方向中央 */
-  align-items: center;           /* 縦方向中央 */
-  text-align: center;            /* テキスト中央 */
-  max-width: 90%;                /* スマホ対応 */
+  border: 2px solid #555;
+  padding: 12px;
+  margin: 20px auto;
+  max-width: 90%;
   box-sizing: border-box;
   background-color: #fefefe;
-  white-space: pre-wrap;         /* 改行を保持 */
+
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  align-items: center;
+
+  overflow: hidden;
 }
+
+
+
 
 /* 縦書き専用の調整（tateクラス内） */
 .tate .puzzle-box {
@@ -236,10 +240,14 @@ footer {
 
 /* ---- venn ---- */
 .venn {
-    position: relative;
-    width: 320px;
-    height: 220px;
-  }
+  width: 100%;
+  max-width: 320px;
+}
+
+.choice {
+  margin-top: 12px;
+  text-align: center;
+}
 
   .circle {
     position: absolute;
