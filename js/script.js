@@ -245,7 +245,7 @@ function checkRewriteQ3() {
     d === "shime";
 
   if (isCorrect) {
-    result.textContent = "　開いている扉を閉めると、扉に左の矢印を発見した。ひもの隣の空白をタップすると左の矢印が表示された。";
+    result.textContent = "　開いている扉をよく見ると『ー』の記号を見つけた。扉を閉めると、『＜』『ー』が組み合わさり、左向きの矢印になった。『ひも』の隣の空白をタップすると左向きの矢印が表示された。";
     inputArea.style.display = "block";
 　
     // 必要ならここで解放
