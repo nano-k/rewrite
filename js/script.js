@@ -271,15 +271,16 @@ function checkRewriteQ4() {
   }
 
   // 選択済み → 正誤判定
-  if (choice === "correct") {
+  if (choice === "uma") {
     result.textContent =
-      "　修正が反映され、文章の違和感が消えた。タブレットに次の解答が入力できるようになった。";
+      "　修正が反映された。馬は翼を得て、文は正しく成立した。タブレットに解答を入力できるようになった。";
     inputArea.style.display = "block";
   } else {
     result.textContent = "何かが違うようだ。";
     inputArea.style.display = "none";
   }
 }
+
 
 
 
