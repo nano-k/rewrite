@@ -273,7 +273,7 @@ function checkRewriteQ4() {
   // 選択済み → 正誤判定
   if (choice === "uma") {
     result.textContent =
-      "　修正が反映された。馬は翼を得て、文は正しく成立した。タブレットに解答を入力できるようになった。";
+      "　馬は翼を得て、ペガサス＝天馬となった。『馬』の隣の空白をタップすると選択肢が『天馬』に変化した。";
     inputArea.style.display = "block";
   } else {
     result.textContent = "何かが違うようだ。";
