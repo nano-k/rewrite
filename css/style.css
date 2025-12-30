@@ -313,10 +313,12 @@ footer {
   height: 1.1em;
   border: 1px solid #000;
   border-radius: 50%;
-  line-height: 1.4em;
+  line-height: 1.1em;      /* ←一致させる */
   text-align: center;
   font-size: 0.7em;
+  vertical-align: middle; /* ←これ重要 */
 }
+
 
 /* スマホ対応：縮小 */
 @media (max-width: 480px) {
