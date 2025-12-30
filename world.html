@@ -238,8 +238,52 @@
 「仲間が減ってしまったの。この翼をあるべき場所に返してほしい」<br>
 　あなたは人魚から翼を受け取った。すべきことを考えよう。<br>
  </p>
+<p class="rewrite-line">
+    <select id="q4Select" onchange="checkRewriteQ4()">
+    <option value=""></option>
+    <option value="tora">とら</option>
+    <option value="hitsuji">ひつじ</option>
+    <option value="uma">馬</option>
+    <option value="dragon">ドラゴン</option>
+  </select>
+  に翼を授ける。
+</p>
+
+<p id="q4RewriteResult"></p>
+
+<div id="q4InputArea" style="display:none;">
+  <!-- 次の解答入力欄-->
+
+  <div class="venn-keep-horizontal">
+  <div class="venn-wrap">
+    <div class="circle left">
+      <div class="vtitle">いる</div>
+      <span class="nowrap">●●<span class="num">2</span></span><br>
+      ●●
+    </div>
+
+    <div class="circle right">
+      <div class="vtitle">いない</div>
+      ●●<br>
+      ●●
+    </div>
+
+    <div class="overlap">
+      ●●<span class="num">1</span>●
+    </div>
+  </div>
+ </div>
+  
+  <p>
+  選択肢：とら／ひつじ／ 馬／ドラゴン／人魚<br>
+  <span class="answer-line">
+    <span class="num">1</span><span class="num">2</span>が答え
+  </span>
+</p>
+
+</div>
    
-   <div class="input-row">  
+     <div class="input-row">  
     <input id="q4" placeholder="答えはかな２文字">
     <button onclick="checkSmall('q4', 6)">送信</button>
      </div>
