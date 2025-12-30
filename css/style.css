@@ -338,6 +338,11 @@ footer {
   margin-top: 4px;
 }
 
+.venn-keep-horizontal {
+  writing-mode: horizontal-tb;
+  display: flex;
+  justify-content: center;
+}
 
 
 /* スマホ対応：縮小 */
