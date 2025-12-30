@@ -257,6 +257,32 @@ function checkRewriteQ3() {
 }
 
 
+function checkRewriteQ4() {
+  const choice = document.getElementById("q4Select").value;
+
+  const result = document.getElementById("q4RewriteResult");
+  const inputArea = document.getElementById("q4InputArea");
+
+  // 未選択
+  if (!choice) {
+    result.textContent = "";
+    inputArea.style.display = "none";
+    return;
+  }
+
+  // 選択済み → 正誤判定
+  if (choice === "correct") {
+    result.textContent =
+      "　修正が反映され、文章の違和感が消えた。タブレットに次の解答が入力できるようになった。";
+    inputArea.style.display = "block";
+  } else {
+    result.textContent = "何かが違うようだ。";
+    inputArea.style.display = "none";
+  }
+}
+
+
+
 /* ==========================================
    大謎1
 ========================================== */
