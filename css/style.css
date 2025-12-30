@@ -330,6 +330,13 @@ footer {
   white-space: nowrap;
 }
 
+.answer-line {
+  display: block;
+  text-align: center;
+  margin-top: 4px;
+}
+
+
 
 /* スマホ対応：縮小 */
 @media (max-width: 480px) {
