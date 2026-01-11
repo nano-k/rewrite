@@ -281,6 +281,29 @@ function checkRewriteQ4() {
   }
 }
 
+function checkRewriteQ5() {
+  const choice = document.getElementById("q5Select").value;
+
+  const result = document.getElementById("q5RewriteResult");
+  const inputArea = document.getElementById("q5InputArea");
+
+  // 未選択
+  if (!choice) {
+    result.textContent = "";
+    inputArea.style.display = "none";
+    return;
+  }
+
+  // 選択済み → 正誤判定
+  if (choice === "hagaki") {
+    result.textContent =
+      "　『はがき』をタップすると文字が消え、謎が変化した。";
+    inputArea.style.display = "block";
+  } else {
+    result.textContent = "何かが違うようだ。";
+    inputArea.style.display = "none";
+  }
+}
 
 
 
