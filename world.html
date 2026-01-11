@@ -313,6 +313,21 @@
 　ここで家具に置かれた小物を見る。あるのは『こけし』や甲冑を着た『ナイト』のフィギュア、『医学』の本のようだ。<br>
 　くまなく探したがこの部屋には『はがき』はないようだ。</p>
 
+<p class="rewrite-line">
+    <select id="q5Select" onchange="checkRewriteQ5()">
+    <option value=""></option>
+    <option value="kokeshi">こけし</option>
+    <option value="knight">ないと</option>
+    <option value="hagaki">はがき</option>
+    <option value="igaku">いがく</option>
+  </select>
+  を問題から消す。
+</p>
+
+       <div class="puzzle-box">
+ <p>横は糸<br>こけし／ないと／いがく</p>
+</div> 
+   
     <div class="input-row">
     <input id="q5" placeholder="解答">
     <button onclick="checkSmall('q5', 7)">送信</button>
